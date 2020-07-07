@@ -1,8 +1,14 @@
-# app
+# Flutter Exporation
 
-A new Flutter project.
+This project is a collection of tutorials and cookbook examples mostly re-created from the official Flutter documentation for the purpose of learning. 
 
-## Getting Started
+## Study Rules!
+
+* All code must be manually typed without copy/pasting from existing examples
+* Experiment to any degree with all examples to expand understanding
+
+
+## Boilerplate from `flutter create` ..
 
 This project is a starting point for a Flutter application.
 
