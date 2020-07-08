@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Page1 extends StatelessWidget {
+class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ShoppingList extends StatefulWidget {
-  ShoppingList({Key key, this.products}) : super(key: key);
+class HomeWidget extends StatefulWidget {
+  HomeWidget({Key key, this.products}) : super(key: key);
 
   final List<Product> products;
 
@@ -9,8 +9,9 @@ class ShoppingList extends StatefulWidget {
   _ShoppingListState createState() => _ShoppingListState();
 }
 
-class _ShoppingListState extends State<ShoppingList> {
+class _ShoppingListState extends State<HomeWidget> {
   Set<Product> _shoppingCart = Set<Product>();
+  List<Product> cartProducts;
 
   void _handleCardChanged(Product product, bool inCart) {
     setState(() {
@@ -21,6 +22,21 @@ class _ShoppingListState extends State<ShoppingList> {
     });
   }
 
+  // Default products when not provided any
+  @override
+  void initState() {
+    if (widget.products == null) {
+      cartProducts = <Product>[
+        Product(name: 'Laser Rifle'),
+        Product(name: 'EMP Grenade'),
+        Product(name: 'Stympack'),
+      ];
+    } else {
+      cartProducts = widget.products;
+    }
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +45,7 @@ class _ShoppingListState extends State<ShoppingList> {
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 8.0),
-        children: widget.products.map((Product product) {
+        children: cartProducts.map((Product product) {
           return ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),
