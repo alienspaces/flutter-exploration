@@ -1,11 +1,13 @@
-# Flutter Exporation
+# Flutter Exploration
 
 This project is a collection of tutorials and cookbook examples mostly re-created from the official Flutter documentation for the purpose of learning. 
 
 ## Study Rules!
 
-* All code must be manually typed without copy/pasting from existing examples
-* Experiment to any degree with all examples to expand understanding
+From any original source material, all code must be:
+
+* Manually typed without copy/pasting
+* Experimented with further to expand understanding
 
 
 ## Boilerplate from `flutter create` ..
