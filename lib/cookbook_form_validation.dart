@@ -23,7 +23,7 @@ class FormWidgetState extends State<FormWidget> {
   // Form field controller
   final fieldController = TextEditingController();
   // Form field focus node
-  FocusNode fieldFocusNode;
+  final fieldFocusNode = FocusNode();
 
   _printLatestValue() {
     // The following will output the field value to the debug console
@@ -34,7 +34,6 @@ class FormWidgetState extends State<FormWidget> {
   void initState() {
     super.initState();
     fieldController.addListener(_printLatestValue);
-    fieldFocusNode = FocusNode();
   }
 
   // NOTE: Important to also dispose of any form field controllers
