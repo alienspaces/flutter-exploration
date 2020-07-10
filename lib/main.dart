@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 // import 'cookbook_animated_container.dart';
 // import 'cookbook_widget_fade.dart';
 // import 'cookbook_drawer.dart';
-import 'cookbook_snackbar.dart';
+// import 'cookbook_snackbar.dart';
+import 'cookbook_orientation.dart';
 
 // NOTE: All examples have a HomeWidget class
 void main() {
