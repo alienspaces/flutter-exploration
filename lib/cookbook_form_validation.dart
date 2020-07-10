@@ -27,6 +27,14 @@ class FormWidgetState extends State<FormWidget> {
       child: Column(
         children: <Widget>[
           TextFormField(
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              labelText: 'This is label text',
+              hintText: 'This is hint text',
+              filled: true,
+              fillColor: Colors.brown[300],
+              focusColor: Colors.brown[100], // dunno..
+            ),
             validator: (value) {
               if (value.isEmpty) {
                 return 'Please enter something.. anything!';
