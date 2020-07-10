@@ -18,7 +18,27 @@ class FormWidget extends StatefulWidget {
 }
 
 class FormWidgetState extends State<FormWidget> {
+  // form state key
   final _formKey = GlobalKey<FormState>();
+  // field controller
+  final fieldController = TextEditingController();
+
+  _printLatestValue() {
+    // The following will output to the debug console
+    print("Field value: ${fieldController.text}");
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fieldController.addListener(_printLatestValue);
+  }
+
+  @override
+  void dispose() {
+    fieldController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +47,7 @@ class FormWidgetState extends State<FormWidget> {
       child: Column(
         children: <Widget>[
           TextFormField(
+            controller: fieldController,
             decoration: InputDecoration(
               border: InputBorder.none,
               labelText: 'This is label text',
