@@ -10,22 +10,22 @@ import 'package:flutter/material.dart';
 // import 'cookbook_drawer.dart';
 // import 'cookbook_snackbar.dart';
 // import 'cookbook_orientation.dart';
-import 'cookbook_tabs.dart';
+// import 'cookbook_tabs.dart';
+import 'cookbook_form_validation.dart';
 
 // NOTE: All examples have a HomeWidget class
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(
-      // Define the default brightness and colors.
+      // Brightness and colours.
       brightness: Brightness.dark,
       primaryColor: Colors.lightBlue[800],
       accentColor: Colors.cyan[600],
 
-      // Define the default font family.
+      // Default font family.
       fontFamily: 'Open Sans',
 
-      // Define the default TextTheme. Use this to specify the default
-      // text styling for headlines, titles, bodies of text, and more.
+      // Default text theme.
       textTheme: TextTheme(
         headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
         headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
