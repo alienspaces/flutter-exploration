@@ -18,13 +18,15 @@ class FormWidget extends StatefulWidget {
 }
 
 class FormWidgetState extends State<FormWidget> {
-  // form state key
+  // Form state key
   final _formKey = GlobalKey<FormState>();
-  // field controller
+  // Form field controller
   final fieldController = TextEditingController();
+  // Form field focus node
+  FocusNode fieldFocusNode;
 
   _printLatestValue() {
-    // The following will output to the debug console
+    // The following will output the field value to the debug console
     print("Field value: ${fieldController.text}");
   }
 
@@ -32,11 +34,14 @@ class FormWidgetState extends State<FormWidget> {
   void initState() {
     super.initState();
     fieldController.addListener(_printLatestValue);
+    fieldFocusNode = FocusNode();
   }
 
+  // NOTE: Important to also dispose of any form field controllers
   @override
   void dispose() {
     fieldController.dispose();
+    fieldFocusNode.dispose();
     super.dispose();
   }
 
@@ -48,6 +53,7 @@ class FormWidgetState extends State<FormWidget> {
         children: <Widget>[
           TextFormField(
             controller: fieldController,
+            focusNode: fieldFocusNode,
             decoration: InputDecoration(
               border: InputBorder.none,
               labelText: 'This is label text',
@@ -66,9 +72,15 @@ class FormWidgetState extends State<FormWidget> {
           RaisedButton(
             onPressed: () {
               if (_formKey.currentState.validate()) {
-                Scaffold.of(context)
-                    .showSnackBar(SnackBar(content: Text('Beep brrrzzt beep')));
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Beep brrrzzt beep'),
+                  ),
+                );
+                return;
               }
+              // Focus on field when form is not valid
+              fieldFocusNode.requestFocus();
             },
             child: Text('Submit'),
           ),
