@@ -13,7 +13,8 @@ import 'package:flutter/material.dart';
 // import 'cookbook_tabs.dart';
 // import 'cookbook_form_validation.dart';
 // import 'cookbook_button_ripple.dart';
-import 'cookbook_dismissible.dart';
+// import 'cookbook_dismissible.dart';
+import 'cookbook_fade_image.dart';
 
 // NOTE: All examples have a HomeWidget class
 void main() {
