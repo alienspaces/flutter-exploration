@@ -9,6 +9,7 @@ From any original source material, all code must be:
 * Manually typed without copy/pasting
 * Experimented with further to expand understanding
 
+```
 lib/cookbook_animated_container.dart
 lib/cookbook_animated_route.dart
 lib/cookbook_button_ripple.dart
