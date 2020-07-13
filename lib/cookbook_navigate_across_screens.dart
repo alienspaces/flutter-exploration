@@ -10,7 +10,7 @@ class HomeWidget extends StatelessWidget {
       body: GestureDetector(
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return HomeWidgetTwo();
+            return PageTwo();
           }));
         },
         child: Image.network(
@@ -21,7 +21,7 @@ class HomeWidget extends StatelessWidget {
   }
 }
 
-class HomeWidgetTwo extends StatelessWidget {
+class PageTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -20,28 +20,38 @@ import 'package:flutter/material.dart';
 // import 'cookbook_differing_list.dart';
 // import 'cookbook_sliverlist.dart';
 // import 'cookbook_listview_builder.dart';
-import 'cookbook_navigate_across_screens.dart';
+// import 'cookbook_navigate_across_screens.dart';
+import 'cookbook_navigate_named_routes.dart';
 
 // NOTE: All examples have a HomeWidget class
 void main() {
-  runApp(MaterialApp(
-    theme: ThemeData(
-      // Brightness and colours.
-      brightness: Brightness.dark,
-      primaryColor: Colors.lightBlue[800],
-      accentColor: Colors.cyan[600],
+  runApp(
+    MaterialApp(
+      theme: ThemeData(
+        // Brightness and colours.
+        brightness: Brightness.dark,
+        primaryColor: Colors.lightBlue[800],
+        accentColor: Colors.cyan[600],
 
-      // Default font family.
-      fontFamily: 'Open Sans',
+        // Default font family.
+        fontFamily: 'Open Sans',
 
-      // Default text theme.
-      textTheme: TextTheme(
-        headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-        headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-        bodyText1: TextStyle(fontSize: 15.0, fontFamily: 'Open Sans'),
-        bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Open Sans'),
+        // Default text theme.
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+          bodyText1: TextStyle(fontSize: 15.0, fontFamily: 'Open Sans'),
+          bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Open Sans'),
+        ),
       ),
+      // home: HomeWidget(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeWidget(),
+        // NOTE: The following route will not be valid for all examples so if
+        // you get compile errors comment out the following line!
+        '/second': (context) => PageTwo(),
+      },
     ),
-    home: HomeWidget(),
-  ));
+  );
 }
