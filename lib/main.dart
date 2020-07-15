@@ -21,7 +21,8 @@ import 'package:flutter/material.dart';
 // import 'cookbook_sliverlist.dart';
 // import 'cookbook_listview_builder.dart';
 // import 'cookbook_navigate_across_screens.dart';
-import 'cookbook_navigate_named_routes.dart';
+// import 'cookbook_navigate_named_routes.dart';
+import 'cookbook_navigate_arguments.dart';
 
 // NOTE: All examples have a HomeWidget class
 void main() {
@@ -50,7 +51,7 @@ void main() {
         '/': (context) => HomeWidget(),
         // NOTE: The following route will not be valid for all examples so if
         // you get compile errors comment out the following line!
-        '/second': (context) => PageTwo(),
+        // '/second': (context) => PageTwo(),
       },
     ),
   );
