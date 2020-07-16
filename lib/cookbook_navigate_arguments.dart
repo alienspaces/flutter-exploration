@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HomeWidget extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   static const routeName = '/';
 
   @override
@@ -22,7 +22,7 @@ class HomeWidget extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(
                   context,
-                  HomeWidget.routeName,
+                  HomeScreen.routeName,
                   arguments: ScreenArguments(
                     'Boo!!',
                     'Hahahaha :D',

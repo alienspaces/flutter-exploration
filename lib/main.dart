@@ -22,9 +22,10 @@ import 'package:flutter/material.dart';
 // import 'cookbook_listview_builder.dart';
 // import 'cookbook_navigate_across_screens.dart';
 // import 'cookbook_navigate_named_routes.dart';
-import 'cookbook_navigate_arguments.dart';
+// import 'cookbook_navigate_arguments.dart';
+import 'cookbook_navigate_data.dart';
 
-// NOTE: All examples have a HomeWidget class
+// NOTE: All examples have a HomeScreen class
 void main() {
   runApp(
     MaterialApp(
@@ -45,13 +46,13 @@ void main() {
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Open Sans'),
         ),
       ),
-      // home: HomeWidget(),
+      // home: HomeScreen(),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeWidget(),
+        '/': (context) => HomeScreen(),
         // NOTE: The following route will not be valid for all examples so if
         // you get compile errors comment out the following line!
-        // '/second': (context) => PageTwo(),
+        // '/second': (context) => SecondScreen(),
       },
     ),
   );

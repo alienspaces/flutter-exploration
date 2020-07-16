@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HomeWidget extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   final String title;
 
-  HomeWidget({Key key, this.title}) : super(key: key);
+  HomeScreen({Key key, this.title}) : super(key: key);
 
   @override
-  _HomeWidgetState createState() => _HomeWidgetState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
 Container fadingContainer = Container(
@@ -15,7 +15,7 @@ Container fadingContainer = Container(
   color: Colors.green,
 );
 
-class _HomeWidgetState extends State<HomeWidget> {
+class _HomeScreenState extends State<HomeScreen> {
   bool _visible = true;
 
   @override

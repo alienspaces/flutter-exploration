@@ -53,7 +53,7 @@ final rightColumn = Expanded(
   ),
 );
 
-class HomeWidget extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

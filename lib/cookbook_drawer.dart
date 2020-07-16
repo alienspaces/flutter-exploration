@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class HomeWidget extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   final String title = 'Drawer';
 
-  HomeWidget({Key key}) : super(key: key);
+  HomeScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

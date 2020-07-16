@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomeWidget extends StatefulWidget {
-  HomeWidget({Key key, this.products}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  HomeScreen({Key key, this.products}) : super(key: key);
 
   final List<Product> products;
 
@@ -9,7 +9,7 @@ class HomeWidget extends StatefulWidget {
   _ShoppingListState createState() => _ShoppingListState();
 }
 
-class _ShoppingListState extends State<HomeWidget> {
+class _ShoppingListState extends State<HomeScreen> {
   Set<Product> _shoppingCart = Set<Product>();
   List<Product> cartProducts;
 

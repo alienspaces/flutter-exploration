@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'example_counter_v2.dart';
 
-class HomeWidget extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Scaffold is a layout for the major Material Components.

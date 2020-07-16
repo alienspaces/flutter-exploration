@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HomeWidget extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   final List<String> items = List<String>.generate(10000, (i) => "Item $i");
-  HomeWidget({Key key}) : super(key: key);
+  HomeScreen({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final title = 'Long List';

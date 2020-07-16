@@ -10,42 +10,35 @@ From any original source material, all code must be:
 * Experimented with further to expand understanding
 
 ```
-cookbook_animated_container.dart
-cookbook_animated_route.dart
-cookbook_button_ripple.dart
-cookbook_differing_list.dart
-cookbook_dismissible.dart
-cookbook_draggable_card.dart
-cookbook_drawer.dart
-cookbook_fade_image.dart
-cookbook_form_validation.dart
-cookbook_gridview.dart
-cookbook_listview_builder.dart
-cookbook_listview.dart
-cookbook_navigate_across_screens.dart
-cookbook_navigate_arguments.dart
-cookbook_navigate_named_routes.dart
-cookbook_orientation.dart
-cookbook_sliverlist.dart
-cookbook_snackbar.dart
-cookbook_tabs.dart
-cookbook_widget_fade.dart
-example_counter.dart
-example_counter_v1.dart
-example_counter_v2.dart
-example_layout.dart
-example_shopping_list.dart
+lib/cookbook_animated_container.dart
+lib/cookbook_animated_route.dart
+lib/cookbook_button_ripple.dart
+lib/cookbook_differing_list.dart
+lib/cookbook_dismissible.dart
+lib/cookbook_draggable_card.dart
+lib/cookbook_drawer.dart
+lib/cookbook_fade_image.dart
+lib/cookbook_form_validation.dart
+lib/cookbook_gridview.dart
+lib/cookbook_listview_builder.dart
+lib/cookbook_listview.dart
+lib/cookbook_navigate_across_screens.dart
+lib/cookbook_navigate_arguments.dart
+lib/cookbook_navigate_data.dart
+lib/cookbook_navigate_named_routes.dart
+lib/cookbook_orientation.dart
+lib/cookbook_sliverlist.dart
+lib/cookbook_snackbar.dart
+lib/cookbook_tabs.dart
+lib/cookbook_widget_fade.dart
+lib/example_counter.dart
+lib/example_counter_v1.dart
+lib/example_counter_v2.dart
+lib/example_layout.dart
+lib/example_shopping_list.dart
 ```
 
-## Boilerplate from `flutter create` ..
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
+## Sources
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

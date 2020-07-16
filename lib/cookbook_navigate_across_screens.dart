@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HomeWidget extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +10,7 @@ class HomeWidget extends StatelessWidget {
       body: GestureDetector(
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return PageTwo();
+            return SecondScreen();
           }));
         },
         child: Image.network(
@@ -21,7 +21,7 @@ class HomeWidget extends StatelessWidget {
   }
 }
 
-class PageTwo extends StatelessWidget {
+class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
