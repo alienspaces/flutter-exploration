@@ -19,13 +19,15 @@ lib/cookbook_draggable_card.dart
 lib/cookbook_drawer.dart
 lib/cookbook_fade_image.dart
 lib/cookbook_form_validation.dart
+lib/cookbook_get_network_data.dart
 lib/cookbook_gridview.dart
 lib/cookbook_listview_builder.dart
 lib/cookbook_listview.dart
 lib/cookbook_navigate_across_screens.dart
 lib/cookbook_navigate_arguments.dart
-lib/cookbook_navigate_data.dart
 lib/cookbook_navigate_named_routes.dart
+lib/cookbook_navigate_return_data.dart
+lib/cookbook_navigate_send_data.dart
 lib/cookbook_orientation.dart
 lib/cookbook_sliverlist.dart
 lib/cookbook_snackbar.dart
