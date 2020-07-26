@@ -25,7 +25,8 @@ import 'package:flutter/material.dart';
 // import 'cookbook_navigate_arguments.dart';
 // import 'cookbook_navigate_return_data.dart';
 // import 'cookbook_navigate_send_data.dart';
-import 'cookbook_get_network_data.dart';
+// import 'cookbook_network_get_data.dart';
+import 'cookbook_network_send_data.dart';
 
 // NOTE: All examples have a HomeScreen class
 void main() {
