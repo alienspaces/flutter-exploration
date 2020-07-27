@@ -75,7 +75,12 @@ class PhotosList extends StatelessWidget {
       ),
       itemCount: photos.length,
       itemBuilder: (context, index) {
-        return Image.network(photos[index].thumbnailUrl);
+        return Column(
+          children: <Widget>[
+            Text(photos[index].title),
+            Image.network(photos[index].thumbnailUrl),
+          ],
+        );
       },
     );
   }
