@@ -37,6 +37,10 @@ dependencies:
   # functions.
   english_words: ^3.1.5
 
+  # The web_socket_channel package provides StreamChannel wrappers for WebSocket 
+  # connections. 
+  web_socket_channel: ^1.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
