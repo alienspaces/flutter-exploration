@@ -5,6 +5,9 @@ import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
+// No suitable Android AVD system images are available. You may need to install these using sdkmanager, for example
+// sdkmanager "system-images;android-27;google_apis_playstore;x86"
+
 void main() async {
   // Avoid errors caused by flutter upgrade.
   // Importing 'package:flutter/widgets.dart' is required.
