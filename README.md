@@ -18,6 +18,7 @@ cookbook_dismissible.dart
 cookbook_draggable_card.dart
 cookbook_drawer.dart
 cookbook_fade_image.dart
+cookbook_file_io.dart
 cookbook_form_validation.dart
 cookbook_gridview.dart
 cookbook_listview_builder.dart
@@ -33,6 +34,7 @@ cookbook_network_send_data.dart
 cookbook_orientation.dart
 cookbook_sliverlist.dart
 cookbook_snackbar.dart
+cookbook_sqlite.dart
 cookbook_tabs.dart
 cookbook_websocket.dart
 cookbook_widget_fade.dart
