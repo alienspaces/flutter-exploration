@@ -21,6 +21,7 @@ cookbook_fade_image.dart
 cookbook_file_io.dart
 cookbook_form_validation.dart
 cookbook_gridview.dart
+cookbook_keyvalue_store.dart
 cookbook_listview_builder.dart
 cookbook_listview.dart
 cookbook_navigate_across_screens.dart
