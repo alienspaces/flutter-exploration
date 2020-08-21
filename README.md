@@ -9,7 +9,7 @@ From any original source material, all code must be:
 * Manually typed without copy/pasting
 * Experimented with further to expand understanding
 
-```
+```bash
 cookbook_animated_container.dart
 cookbook_animated_route.dart
 cookbook_button_ripple.dart
