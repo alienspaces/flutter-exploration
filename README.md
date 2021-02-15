@@ -1,6 +1,6 @@
 # Flutter Exploration
 
-A collection of examples.
+A collection of examples and demonstrations.
 
 ## Sources
 
