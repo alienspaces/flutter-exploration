@@ -26,7 +26,7 @@ class PageWidget extends StatelessWidget {
             ),
             duration: Duration(seconds: 1),
           );
-          Scaffold.of(context).showSnackBar(snackBar);
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
         child: Text('Show SnackBar'),
       ),

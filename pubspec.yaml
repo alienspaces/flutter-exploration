@@ -54,6 +54,12 @@ dependencies:
   # plugin must not be used for storing critical data.
   shared_preferences: 0.5.8
 
+  # A minimalistic Flutter game engine.
+  flame:
+    git:
+      url: git://github.com/flame-engine/flame.git
+      ref: 4f4f775a885df337106d17ff514abd1e83658fef
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

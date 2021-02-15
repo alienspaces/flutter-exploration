@@ -19,7 +19,7 @@ class RippleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Scaffold.of(context).showSnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Tapper tapper'),
             duration: Duration(milliseconds: 500),

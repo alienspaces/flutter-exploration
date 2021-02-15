@@ -32,7 +32,7 @@ class DismissibleListState extends State<DismissibleList> {
         onDismissed: (direction) {
           setState(() {
             items.removeAt(index);
-            Scaffold.of(context).showSnackBar(
+            ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('$item dismissed'),
               ),

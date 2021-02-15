@@ -1,8 +1,8 @@
 # Flutter Exploration
 
-This project is a collection of tutorials and cookbook examples mostly re-created from the official Flutter documentation for the purpose of learning. 
+This project is a collection of tutorials and cookbook examples mostly re-created from the official Flutter documentation for the purpose of learning.
 
-## Study Rules!
+## Study Rules
 
 From any original source material, all code must be:
 
@@ -48,5 +48,5 @@ example_shopping_list.dart
 
 ## Sources
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+* [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
