@@ -18,7 +18,7 @@ Flutter version set to `beta` channel version `1.25.0-8.1.pre` for [web support]
 flutter channel beta
 ```
 
-If you have issues setting the Flutter version navigate to your Flutter git repository and checkout the `1.25.0-8.1.pre` tag specifically.
+If you have issues setting the Flutter version navigate to your Flutter git repository and checkout the `1.25.0-8.1.pre` tag.
 
 ```sh
 # Where you installed Fluuter
