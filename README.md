@@ -1,8 +1,33 @@
 # Flutter Exploration
 
-A collection of examples and demonstrations.
+A collection of Flutter screens for purposes of learning and experimenting with Flutter and various packages.
 
-## Sources
+All examples should work with web support.
+
+* Fork and clone
+* Run `./lib/main.dart`
+* Explore, change, hot reload, go crazy!
+
+## Flutter Channel
+
+Flutter version set specifically to `beta` channel `1.25.0-8.1.pre` for [web support](https://flutter.dev/docs/development/platform-integration/web) prior to `null safety`.
+
+```sh
+flutter channel beta
+```
+
+If you have issues setting the Flutter version navigate to your Flutter git repository and checkout the `1.25.0-8.1.pre` tag specifically.
+
+```sh
+# Where you installed Fluuter
+cd ~/flutter
+# Checkout specific beta version
+git checkout 1.25.0-8.1.pre
+```
+
+## Flutter Sources
+
+Examples have been taken and potentially modified from the following sources.
 
 * [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 * [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
