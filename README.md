@@ -8,9 +8,11 @@ All examples should work with web support.
 * Run `./lib/main.dart`
 * Explore, change, hot reload, go crazy!
 
-## Flutter Channel
+## Flutter Installation
 
-Flutter version set specifically to `beta` channel `1.25.0-8.1.pre` for [web support](https://flutter.dev/docs/development/platform-integration/web) prior to `null safety`.
+Install Flutter manually by [cloning the git repository](https://flutter.dev/docs/get-started/install/linux) so the Flutter version can be set specifically.
+
+Flutter version set to `beta` channel version `1.25.0-8.1.pre` for [web support](https://flutter.dev/docs/development/platform-integration/web) prior to `null safety`.
 
 ```sh
 flutter channel beta
