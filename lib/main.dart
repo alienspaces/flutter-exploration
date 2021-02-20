@@ -32,63 +32,163 @@ import 'package:flutterexploration/screens/snackbar.dart';
 import 'package:flutterexploration/screens/tabs.dart';
 import 'package:flutterexploration/screens/widget_fade.dart';
 
-// Routes - Add routes to new screens here
-var routes = <String, dynamic>{
-  '/': OrientationScreen(),
-  '/animated-container': AnimatedContainerScreen(),
-  '/animated-route': AnimatedRouteScreen(),
-  '/button-ripple': ButtonRippleScreen(),
-  '/counter': CounterScreen(),
-  '/differing-list': DifferingListScreen(),
-  '/dismissable': DismissableScreen(),
-  '/draggable-card': DraggableCardScreen(),
-  '/drawer': DrawerScreen(),
-  '/fade-image': FadeImageScreen(),
-  '/fade-io': FileIOScreen(),
-  '/form-validation': FormValidationScreen(),
-  '/gridview': GridviewScreen(),
-  '/keyvalue-store': KeyValueStoreScreen(),
-  '/layout': LayoutScreen(),
-  '/listview': ListViewScreen(),
-  '/listview-builder': ListViewBuilderScreen(),
-  '/navigate': NavigateScreen(),
-  '/navigate-arguments': NavigateArgumentsScreen(),
-  '/navigate-named': NavigateNamedScreen(),
-  '/navigate-named-second': NavigateNamedSecondScreen(),
-  '/navigate-return-data': NavigateReturnDataScreen(),
-  '/navigate-send-data': NavigateSendDataScreen(),
-  '/network-get-data': NetworkGetDataScreen(),
-  '/network-get-large-data': NetworkGetLargeDataScreen(),
-  '/network-send-data': NetworkSendDataScreen(),
-  '/orientation': OrientationChangeScreen(),
-  '/shopping-list': ShoppingListScreen(),
-  '/sliverlist': SliverListScreen(),
-  '/snackbar': SnackBarScreen(),
-  '/tabs': TabsScreen(),
-  '/widget-fade': WidgetFadeScreen(),
-};
+class Route {
+  String route;
+  String description;
+  Widget screen;
 
-// Generate application reoutes
+  Route({this.route, this.description, this.screen});
+}
+
+List<Route> myRoutes = [
+  Route(
+    route: '/',
+    description: HomeScreen.description,
+    screen: HomeScreen(),
+  ),
+  Route(
+    route: '/animated-container',
+    description: "Randomly adjust the properties of an AnimatedContainer",
+    screen: AnimatedContainerScreen(),
+  ),
+  Route(
+    route: '/animated-route',
+    description: "Slide transition between two pages",
+    screen: AnimatedRouteScreen(),
+  ),
+  Route(
+    route: '/button-ripple',
+    screen: ButtonRippleScreen(),
+  ),
+  Route(
+    route: '/counter',
+    screen: CounterScreen(),
+  ),
+  Route(
+    route: '/differing-list',
+    screen: DifferingListScreen(),
+  ),
+  Route(
+    route: '/dismissable',
+    screen: DismissableScreen(),
+  ),
+  Route(
+    route: '/draggable-card',
+    screen: DraggableCardScreen(),
+  ),
+  Route(
+    route: '/drawer',
+    screen: DrawerScreen(),
+  ),
+  Route(
+    route: '/fade-image',
+    screen: FadeImageScreen(),
+  ),
+  Route(
+    route: '/fade-io',
+    screen: FileIOScreen(),
+  ),
+  Route(
+    route: '/form-validation',
+    screen: FormValidationScreen(),
+  ),
+  Route(
+    route: '/gridview',
+    screen: GridviewScreen(),
+  ),
+  Route(
+    route: '/keyvalue-store',
+    screen: KeyValueStoreScreen(),
+  ),
+  Route(
+    route: '/layout',
+    screen: LayoutScreen(),
+  ),
+  Route(
+    route: '/listview',
+    screen: ListViewScreen(),
+  ),
+  Route(
+    route: '/listview-builder',
+    screen: ListViewBuilderScreen(),
+  ),
+  Route(
+    route: '/navigate',
+    screen: NavigateScreen(),
+  ),
+  Route(
+    route: '/navigate-arguments',
+    screen: NavigateArgumentsScreen(),
+  ),
+  Route(
+    route: '/navigate-named',
+    screen: NavigateNamedScreen(),
+  ),
+  Route(
+    route: '/navigate-named-second',
+    screen: NavigateNamedSecondScreen(),
+  ),
+  Route(
+    route: '/navigate-return-data',
+    screen: NavigateReturnDataScreen(),
+  ),
+  Route(
+    route: '/navigate-send-data',
+    screen: NavigateSendDataScreen(),
+  ),
+  Route(
+    route: '/network-get-data',
+    screen: NetworkGetDataScreen(),
+  ),
+  Route(
+    route: '/network-get-large-data',
+    screen: NetworkGetLargeDataScreen(),
+  ),
+  Route(
+    route: '/network-send-data',
+    screen: NetworkSendDataScreen(),
+  ),
+  Route(
+    route: '/orientation',
+    screen: OrientationChangeScreen(),
+  ),
+  Route(
+    route: '/shopping-list',
+    screen: ShoppingListScreen(),
+  ),
+  Route(
+    route: '/sliverlist',
+    screen: SliverListScreen(),
+  ),
+  Route(
+    route: '/snackbar',
+    screen: SnackBarScreen(),
+  ),
+  Route(
+    route: '/tabs',
+    screen: TabsScreen(),
+  ),
+  Route(
+    route: '/widget-fade',
+    screen: WidgetFadeScreen(),
+  ),
+];
+
+// Generate application routes
 Map<String, Widget Function(BuildContext)> generateApplicationRoutes() {
   Map<String, Widget Function(BuildContext)> applicationRoutes = {};
 
-  routes.keys.forEach((keyName) {
-    applicationRoutes[keyName] = (context) => routes[keyName];
+  myRoutes.forEach((myRoute) {
+    applicationRoutes[myRoute.route] = (context) => myRoute.screen;
   });
 
   return applicationRoutes;
 }
 
-// NOTE: All examples have a OrientationScreen class
 void main() {
   runApp(
     MaterialApp(
       theme: ThemeData(
-        // Brightness and colours.
-        brightness: Brightness.dark,
-        primaryColor: Colors.lightBlue[800],
-        accentColor: Colors.cyan[600],
-
         // Default font family.
         fontFamily: 'Open Sans',
 
@@ -99,6 +199,21 @@ void main() {
           bodyText1: TextStyle(fontSize: 15.0, fontFamily: 'Open Sans'),
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Open Sans'),
         ),
+        colorScheme: ColorScheme(
+          brightness: Brightness.dark,
+          primary: Colors.grey,
+          primaryVariant: Colors.grey[600],
+          onPrimary: Colors.white,
+          secondary: Colors.blueGrey[700],
+          secondaryVariant: Colors.blueGrey[900],
+          onSecondary: Colors.white,
+          error: Colors.orange[100],
+          onError: Colors.black,
+          background: Colors.grey[800],
+          onBackground: Colors.white,
+          onSurface: Colors.black,
+          surface: Colors.grey[400],
+        ),
       ),
       initialRoute: '/',
       routes: generateApplicationRoutes(),
@@ -106,23 +221,50 @@ void main() {
   );
 }
 
-class OrientationScreen extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
+  static String description = 'Lists all other screens that contain examples';
+
   // Build list of links to screens
   List<Widget> buildScreenList(BuildContext context) {
     List<Widget> routeList = [];
-    routes.keys.forEach((keyName) {
+    myRoutes.forEach((myRoute) {
       // Skip '/' root route
-      if (keyName == '/') {
+      if (myRoute.route == '/') {
         return;
       }
       routeList.add(
         Container(
-          margin: EdgeInsets.fromLTRB(18, 0, 18, 0),
-          child: RaisedButton(
-            onPressed: () => {Navigator.of(context).pushNamed(keyName)},
+          margin: EdgeInsets.fromLTRB(18, 2, 18, 2),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+            borderRadius: BorderRadius.all(Radius.circular(30)),
+          ),
+          height: 50,
+          child: ElevatedButton(
+            onPressed: () => {Navigator.of(context).pushNamed(myRoute.route)},
             child: Container(
               alignment: Alignment.centerLeft,
-              child: Text('$keyName'),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 3, 0, 1),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '${myRoute.route}',
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 1, 0, 3),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '${myRoute.description ?? ""}',
+                      style: Theme.of(context).textTheme.caption,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -134,13 +276,14 @@ class OrientationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.fromLTRB(16, 60, 10, 20),
+              margin: EdgeInsets.fromLTRB(16, 60, 10, 10),
               child: Text('Exploration', style: Theme.of(context).textTheme.headline4),
             ),
             Expanded(
@@ -151,7 +294,7 @@ class OrientationScreen extends StatelessWidget {
             Container(
               margin: EdgeInsets.fromLTRB(16, 18, 10, 20),
               child: Text(
-                'An ever growing list of screens demonstrating various Flutter features.',
+                'An ever growing list of screens exploring the Flutter library.',
                 textAlign: TextAlign.center,
               ),
             ),

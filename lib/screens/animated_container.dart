@@ -19,6 +19,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
         title: Text('AnimatedContainer Demo'),
       ),
       body: Center(
+        // Creates a container that animates its parameters implicitly.
         child: AnimatedContainer(
           width: _width,
           height: _height,
@@ -34,6 +35,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
         child: Icon(Icons.play_arrow),
         onPressed: () {
           setState(() {
+            // Set random width, height, colour and border radius
             final r = new Random();
             _width = r.nextInt(300).toDouble();
             _height = r.nextInt(300).toDouble();
