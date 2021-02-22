@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class AnimatedContainerScreen extends StatefulWidget {
+  static String name = 'Animated Container';
+  static String description = 'Randomly adjust the properties of an AnimatedContainer';
+
   @override
   _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
 }

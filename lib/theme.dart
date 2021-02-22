@@ -78,7 +78,7 @@ ThemeData getTheme() {
       onSecondary: Colors.black,
       error: Colors.orange[100],
       onError: Colors.black,
-      background: Colors.grey[300],
+      background: Color(0xFFE1E2E1),
       onBackground: Colors.black,
       surface: Color(0xFFd1d9ff),
       onSurface: Colors.black,

@@ -33,155 +33,180 @@ import 'package:flutterexploration/screens/snackbar.dart';
 import 'package:flutterexploration/screens/tabs.dart';
 import 'package:flutterexploration/screens/widget_fade.dart';
 
-class Route {
+/// Define RouteConfigs and screens here and they will automatically be
+/// added to the list of screens displayed on the home page
+
+class RouteConfig {
   String name;
   String description;
   Widget screen;
+  bool isDefault;
 
-  Route({this.name, this.description, this.screen});
+  RouteConfig({this.name, this.description, this.screen, this.isDefault = false});
+
+  static String toSnakeCase(String str) {
+    return str
+        .replaceAllMapped(
+            RegExp(r'[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+'),
+            (Match m) => "${m[0].toLowerCase()}")
+        .replaceAll(RegExp(r'(-|\s)+'), '_');
+  }
 }
 
-List<Route> routes = [
-  Route(
-    name: '/',
+List<RouteConfig> routes = [
+  RouteConfig(
+    name: HomeScreen.name,
     description: HomeScreen.description,
     screen: HomeScreen(),
+    isDefault: true,
   ),
-  Route(
-    name: '/animated-container',
-    description: "Randomly adjust the properties of an AnimatedContainer",
+  RouteConfig(
+    name: AnimatedContainerScreen.name,
+    description: AnimatedContainerScreen.description,
     screen: AnimatedContainerScreen(),
   ),
-  Route(
-    name: '/animated-route',
-    description: "Slide transition between two pages",
+  RouteConfig(
+    name: AnimatedRouteScreen.name,
+    description: AnimatedRouteScreen.description,
     screen: AnimatedRouteScreen(),
   ),
-  Route(
-    name: '/button-ripple',
+  RouteConfig(
+    name: ButtonRippleScreen.name,
+    description: ButtonRippleScreen.description,
     screen: ButtonRippleScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/counter',
     screen: CounterScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/differing-list',
     screen: DifferingListScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/dismissable',
     screen: DismissableScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/draggable-card',
     screen: DraggableCardScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/drawer',
     screen: DrawerScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/fade-image',
     screen: FadeImageScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/fade-io',
     screen: FileIOScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/form-validation',
     screen: FormValidationScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/gridview',
     screen: GridviewScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/keyvalue-store',
     screen: KeyValueStoreScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/layout',
     screen: LayoutScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/listview',
     screen: ListViewScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/listview-builder',
     screen: ListViewBuilderScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/navigate',
     screen: NavigateScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/navigate-arguments',
     screen: NavigateArgumentsScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/navigate-named',
     screen: NavigateNamedScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/navigate-named-second',
     screen: NavigateNamedSecondScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/navigate-return-data',
     screen: NavigateReturnDataScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/navigate-send-data',
     screen: NavigateSendDataScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/network-get-data',
     screen: NetworkGetDataScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/network-get-large-data',
     screen: NetworkGetLargeDataScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/network-send-data',
     screen: NetworkSendDataScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/orientation',
     screen: OrientationChangeScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/shopping-list',
     screen: ShoppingListScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/sliverlist',
     screen: SliverListScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/snackbar',
     screen: SnackBarScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/tabs',
     screen: TabsScreen(),
   ),
-  Route(
+  RouteConfig(
     name: '/widget-fade',
     screen: WidgetFadeScreen(),
   ),
 ];
 
-// Generate application routes
+// Generate application RouteConfigs
 Map<String, Widget Function(BuildContext)> getRoutes() {
-  Map<String, Widget Function(BuildContext)> applicationRoutes = {};
+  Map<String, Widget Function(BuildContext)> applicationRouteConfigs = {};
 
   routes.forEach((route) {
-    applicationRoutes[route.name] = (context) => route.screen;
+    applicationRouteConfigs[RouteConfig.toSnakeCase(route.name)] = (context) => route.screen;
   });
 
-  return applicationRoutes;
+  return applicationRouteConfigs;
+}
+
+// Generate application RouteConfigs
+RouteConfig getDefaultRoute() {
+  for (var i = 0; i < routes.length; i++) {
+    if (routes[i].isDefault) {
+      return routes[i];
+    }
+  }
+
+  return null;
 }

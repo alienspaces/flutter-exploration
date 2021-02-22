@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AnimatedRouteScreen extends StatelessWidget {
+  static String name = 'Animated Route';
+  static String description = 'Slide transition between two pages';
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),

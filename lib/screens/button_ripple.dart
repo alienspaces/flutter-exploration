@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ButtonRippleScreen extends StatelessWidget {
+  static String name = 'Button Ripple';
+  static String description = 'Utilise an InkWell for ripple effects';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
