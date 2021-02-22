@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FormValidationScreen extends StatelessWidget {
+  static String name = 'Form Validation';
+  static String description = 'Validate a form with a TextEditingController';
+
   @override
   Widget build(BuildContext content) {
     return Scaffold(

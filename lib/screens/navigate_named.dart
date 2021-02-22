@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NavigateNamedScreen extends StatelessWidget {
+  static String name = 'Naviagate Named';
+  static String description = 'Navigate to a named route';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

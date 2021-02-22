@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NavigateReturnDataScreen extends StatelessWidget {
+  static String name = 'Navigate Return Data';
+  static String description = 'Navigate and return with data';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

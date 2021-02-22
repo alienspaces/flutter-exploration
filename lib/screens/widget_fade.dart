@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class WidgetFadeScreen extends StatefulWidget {
+  static String name = 'Widget Fade';
+  static String description = 'Fade a widget in and out';
+
   final String title;
 
   WidgetFadeScreen({Key key, this.title}) : super(key: key);
@@ -43,7 +46,7 @@ class _WidgetFadeScreenState extends State<WidgetFadeScreen> {
             _visible = !_visible;
           });
         },
-        tooltip: 'Toggly Bogggly',
+        tooltip: 'Toggly Boggly',
         child: Icon(Icons.flip),
       ),
     );

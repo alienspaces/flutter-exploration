@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DifferingListScreen extends StatelessWidget {
+  static String name = 'Differing List';
+  static String description = 'ListView with ListTiles';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class OrientationChangeScreen extends StatelessWidget {
+  static String name = 'Orientation Change';
+  static String description = 'Adjust layout when device orientation changes';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

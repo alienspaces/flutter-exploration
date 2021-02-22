@@ -54,6 +54,9 @@ final rightColumn = Expanded(
 );
 
 class LayoutScreen extends StatelessWidget {
+  static String name = 'Layout';
+  static String description = 'Very basic layout Row';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

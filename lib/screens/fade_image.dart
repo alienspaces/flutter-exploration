@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FadeImageScreen extends StatelessWidget {
+  static String name = 'Fade Image';
+  static String description = 'Simple FadeInImage';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

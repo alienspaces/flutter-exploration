@@ -38,6 +38,9 @@ class Photo {
 }
 
 class NetworkGetLargeDataScreen extends StatelessWidget {
+  static String name = 'Network Get Lots';
+  static String description = 'Get lots of data from a REST API';
+
   final String title = 'Fetch lots of data';
 
   NetworkGetLargeDataScreen({Key key}) : super(key: key);

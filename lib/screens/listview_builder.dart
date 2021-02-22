@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ListViewBuilderScreen extends StatelessWidget {
+  static String name = 'ListView Builder';
+  static String description = 'A simple list using ListView builder';
+
   final List<String> items = List<String>.generate(10000, (i) => "Item $i");
   ListViewBuilderScreen({Key key}) : super(key: key);
   @override

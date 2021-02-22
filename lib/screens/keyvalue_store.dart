@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class KeyValueStoreScreen extends StatefulWidget {
+  static String name = 'KeyValue Store';
+  static String description = 'Read and write values using SharedPreferences';
+
   KeyValueStoreScreen({Key key}) : super(key: key);
   final String title = 'Key/Value Demo';
 

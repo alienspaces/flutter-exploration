@@ -34,6 +34,9 @@ class Album {
 }
 
 class NetworkSendDataScreen extends StatefulWidget {
+  static String name = 'Network Send';
+  static String description = 'Send data to a REST API';
+
   NetworkSendDataScreen({Key key}) : super(key: key);
   @override
   _NetworkSendDataScreenState createState() {

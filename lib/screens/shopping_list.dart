@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ShoppingListScreen extends StatefulWidget {
+  static String name = 'Shopping List';
+  static String description = 'A shopping list';
+
   ShoppingListScreen({Key key, this.products}) : super(key: key);
 
   final List<Product> products;

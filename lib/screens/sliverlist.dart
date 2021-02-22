@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SliverListScreen extends StatelessWidget {
+  static String name = 'Sliver List';
+  static String description = 'A simple SliverList with SliverChildBuilderDelegate';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

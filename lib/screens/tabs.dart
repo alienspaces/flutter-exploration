@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TabsScreen extends StatelessWidget {
+  static String name = 'Tabs';
+  static String description = 'A simple TabBar with Tabs';
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

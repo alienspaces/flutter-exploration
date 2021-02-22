@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NavigateScreen extends StatelessWidget {
+  static String name = 'Navigate';
+  static String description = 'Simple navigation between screens';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

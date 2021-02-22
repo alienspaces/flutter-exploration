@@ -5,8 +5,9 @@ ThemeData getTheme() {
     // Default font family.
     fontFamily: 'Open Sans',
 
-    // NOTE: Not all Flutter components correctly use
-    // the defined colorTheme data provided
+    // NOTE: Setting the primaryColor provides some consistency
+    // across screen colours as not all Flutter components correctly
+    // use the defined colorTheme data provided further below.
     primaryColor: Color(0xFF9fa8da),
 
     // Default text theme.

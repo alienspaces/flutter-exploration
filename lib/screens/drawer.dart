@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DrawerScreen extends StatelessWidget {
+  static String name = 'Drawer';
+  static String description = 'Scaffold with a Drawer';
+
   final String title = 'Drawer';
 
   DrawerScreen({Key key}) : super(key: key);

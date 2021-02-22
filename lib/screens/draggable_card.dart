@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
 class DraggableCardScreen extends StatelessWidget {
+  static String name = 'Draggable';
+  static String description = 'Draggable Card with GestureDetector';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

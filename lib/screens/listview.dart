@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ListViewScreen extends StatelessWidget {
+  static String name = 'ListView';
+  static String description = 'A very simple ListView with static items';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

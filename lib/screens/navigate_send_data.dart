@@ -17,6 +17,9 @@ final todos = List<Todo>.generate(
 );
 
 class NavigateSendDataScreen extends StatelessWidget {
+  static String name = 'Navigate Pass Data';
+  static String description = 'Navigate and pass data';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

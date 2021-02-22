@@ -35,6 +35,9 @@ class CounterStorage {
 }
 
 class FileIOScreen extends StatefulWidget {
+  static String name = 'File IO';
+  static String description = 'Read and write values from local storage';
+
   final CounterStorage storage = CounterStorage();
 
   FileIOScreen({Key key}) : super(key: key);

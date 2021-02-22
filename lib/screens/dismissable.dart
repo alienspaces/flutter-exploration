@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DismissableScreen extends StatelessWidget {
+  static String name = 'Dismissable List';
+  static String description = 'ListView with Dismissable items';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

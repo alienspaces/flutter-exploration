@@ -29,6 +29,9 @@ class Album {
 }
 
 class NetworkGetDataScreen extends StatefulWidget {
+  static String name = 'Network Get';
+  static String description = 'Get data from a REST API';
+
   NetworkGetDataScreen({Key key}) : super(key: key);
   @override
   _NetworkGetDataScreenState createState() => _NetworkGetDataScreenState();

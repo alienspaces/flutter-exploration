@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NavigateArgumentsScreen extends StatelessWidget {
+  static String name = 'Navigate Arguments';
+  static String description = 'Pass arguments when routing';
+
   static const routeName = '/navigate-arguments';
 
   @override

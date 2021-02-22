@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SnackBarScreen extends StatelessWidget {
+  static String name = 'SnackBar';
+  static String description = 'A simple SnackBar with a SnackBarAction';
+
   @override
   Widget build(BuildContext content) {
     return Scaffold(

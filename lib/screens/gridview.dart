@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class GridviewScreen extends StatelessWidget {
+  static String name = 'GridView';
+  static String description = 'A simple GridView';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
