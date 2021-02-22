@@ -34,8 +34,9 @@ class HomeScreen extends StatelessWidget {
                   Theme.of(context).colorScheme.secondaryVariant,
                 ),
               ),
-              onPressed: () =>
-                  {Navigator.of(context).pushNamed(RouteConfig.toSnakeCase(route.name))},
+              onPressed: () => {
+                Navigator.of(context).pushNamed(RouteConfig.toSnakeCase(route.name)),
+              },
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -82,7 +83,7 @@ class HomeScreen extends StatelessWidget {
               color: Theme.of(context).colorScheme.primary,
               height: 50,
               alignment: Alignment.center,
-              child: Text('Exploration', style: Theme.of(context).textTheme.headline4),
+              child: Text('Flutter Exploration', style: Theme.of(context).textTheme.headline5),
             ),
             Expanded(
               child: ListView(
@@ -91,10 +92,13 @@ class HomeScreen extends StatelessWidget {
             ),
             Container(
               color: Color(0xFFF5F5F6),
-              padding: EdgeInsets.fromLTRB(16, 18, 10, 20),
-              child: Text(
-                'An ever growing list of screens exploring the Flutter library.',
-                textAlign: TextAlign.center,
+              height: 50,
+              child: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  'A set of screens exploring the Flutter library.',
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ],

@@ -33,7 +33,7 @@ import 'package:flutterexploration/screens/snackbar.dart';
 import 'package:flutterexploration/screens/tabs.dart';
 import 'package:flutterexploration/screens/widget_fade.dart';
 
-/// Define RouteConfigs and screens here and they will automatically be
+/// Define RouteConfigs and screens here and they will be
 /// added to the list of screens displayed on the home page
 
 class RouteConfig {
@@ -44,6 +44,7 @@ class RouteConfig {
 
   RouteConfig({this.name, this.description, this.screen, this.isDefault = false});
 
+  /// Converts a given string to snake-case
   static String toSnakeCase(String str) {
     return str
         .replaceAllMapped(
@@ -76,7 +77,8 @@ List<RouteConfig> routes = [
     screen: ButtonRippleScreen(),
   ),
   RouteConfig(
-    name: '/counter',
+    name: CounterScreen.name,
+    description: CounterScreen.description,
     screen: CounterScreen(),
   ),
   RouteConfig(

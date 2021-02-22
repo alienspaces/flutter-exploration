@@ -5,6 +5,10 @@ ThemeData getTheme() {
     // Default font family.
     fontFamily: 'Open Sans',
 
+    // NOTE: Not all Flutter components correctly use
+    // the defined colorTheme data provided
+    primaryColor: Color(0xFF9fa8da),
+
     // Default text theme.
     textTheme: TextTheme(
       headline1: TextStyle(
@@ -69,7 +73,7 @@ ThemeData getTheme() {
       ),
     ),
     colorScheme: ColorScheme(
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
       primary: Color(0xFF9fa8da),
       primaryVariant: Color(0xFF6f79a8),
       onPrimary: Colors.black,
