@@ -16,6 +16,12 @@
 
   <title>app</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+  </style>
 </head>
 <body>
   <!-- This script installs service_worker.js to provide PWA functionality to
@@ -24,7 +30,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=2676772014');
+        navigator.serviceWorker.register('flutter_service_worker.js?v=2058731443');
       });
     }
   </script>

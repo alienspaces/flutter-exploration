@@ -2,10 +2,14 @@
 
 A collection of Flutter screens for purposes of learning and experimenting with Flutter and various packages.
 
+## Check it out
+
+[https://alienspaces.github.io/flutter-exploration](https://alienspaces.github.io/flutter-exploration)
+
 All examples should work with web support.
 
 * Fork and clone
-* Run `./lib/main.dart`
+* `flutter run`
 * Explore, change, hot reload, go crazy!
 
 ## Flutter Installation
@@ -25,6 +29,9 @@ If you have issues setting the Flutter version navigate to your Flutter git repo
 cd ~/flutter
 # Checkout specific beta version
 git checkout 1.25.0-8.1.pre
+cd -
+flutter pub get
+flutter run
 ```
 
 ## Flutter Sources
