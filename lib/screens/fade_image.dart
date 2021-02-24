@@ -13,7 +13,8 @@ class FadeImageScreen extends StatelessWidget {
       body: Center(
         child: FadeInImage.assetNetwork(
           placeholder: 'images/loading.gif',
-          image: 'https://www.blackgate.com/wp-content/uploads/2014/02/basic-dnd.jpg',
+          image:
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/DnD_Djinn.png/640px-DnD_Djinn.png',
         ),
       ),
     );

@@ -61482,7 +61482,7 @@ $0:function(){K.dm(this.a).ip(0,null)},
 $S:1}
 Y.BL.prototype={
 A:function(a,b){var s=null,r=E.bh(s,s,!0,s,!0,s,1,s,s,s,!1,s,s,s,s,s,!0,s,s,s,s,L.a_("Fading Image",s,s,s,s,s,s,s),s,s,s,1,s),q=M.abu(s,s,new L.qY("images/loading.gif",s))
-return M.bl(r,s,T.cE(new B.BM(q,M.abu(s,s,new D.m4("https://www.blackgate.com/wp-content/uploads/2014/02/basic-dnd.jpg",1)),s),s,s),s,s)}}
+return M.bl(r,s,T.cE(new B.BM(q,M.abu(s,s,new D.m4("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/DnD_Djinn.png/640px-DnD_Djinn.png",1)),s),s,s),s,s)}}
 X.PV.prototype={
 grv:function(){var s=0,r=P.a7(t.O),q,p
 var $async$grv=P.a2(function(a,b){if(a===1)return P.a4(b,r)
