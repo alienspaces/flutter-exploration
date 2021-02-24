@@ -11,25 +11,41 @@ class DrawerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(
+        title: Text(title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.backspace_rounded),
+            color: Theme.of(context).colorScheme.onPrimary,
+            tooltip: 'Search',
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+        ],
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Drawer header'),
+              child: Text('Drawer Header'),
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Theme.of(context).colorScheme.secondary,
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: Text('Click me'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              title: Text('Or me'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('And me!'),
               onTap: () {
                 Navigator.pop(context);
               },
