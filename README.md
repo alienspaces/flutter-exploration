@@ -2,17 +2,20 @@
 
 A collection of Flutter screens for purposes of learning and experimenting with Flutter and various packages.
 
-## Check it out
+## Resulting Application
 
 [https://alienspaces.github.io/flutter-exploration](https://alienspaces.github.io/flutter-exploration)
 
-All examples should work with web support.
+Most examples work with web support.
 
-* Fork this repository so you muck around and push your own changes
+## Get Started
+
+* Fork this repository
+* Install [Flutter](https://flutter.dev/docs/get-started/install) _(See notes below)_
 * `flutter run --debug --hot`
 * Explore, experiment, have fun!
 
-## Flutter Installation
+### Flutter Installation
 
 Install Flutter manually by [cloning the git repository](https://flutter.dev/docs/get-started/install/linux) so the Flutter version can be set specifically.
 
@@ -36,7 +39,7 @@ flutter run
 
 ## Flutter Sources
 
-Examples have been taken and potentially modified from the following sources.
+Examples have been manually replicated and modified from the following sources:
 
 * [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 * [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
