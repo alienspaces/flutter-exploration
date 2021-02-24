@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# The `docs` directory is where this repositories github pages is 
+# configured to serve documents from. This scripts builds the web
+# version and updates the `docs` directory with the result.
+
+flutter build web
+cp -r build/web/* ./docs
+git add .
+git status
+git commit -m "Updated web build"

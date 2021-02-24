@@ -8,9 +8,9 @@ A collection of Flutter screens for purposes of learning and experimenting with 
 
 All examples should work with web support.
 
-* Fork and clone
+* Fork this repository so you muck around and push your own changes
 * `flutter run --debug --hot`
-* Explore, change, hot reload, go crazy!
+* Explore, experiment, have fun!
 
 ## Flutter Installation
 
