@@ -13,9 +13,13 @@ class SliverListScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            backgroundColor: Theme.of(context).colorScheme.secondary,
             title: Text('Floating app bar'),
             floating: true,
-            flexibleSpace: Placeholder(),
+            flexibleSpace: Container(
+              alignment: Alignment.bottomCenter,
+              child: Text('Flexible space', style: Theme.of(context).textTheme.headline3),
+            ),
             expandedHeight: 200,
           ),
           SliverList(

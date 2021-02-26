@@ -6,7 +6,9 @@ class AnimatedRouteScreen extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Animated Route'),
+      ),
       body: Center(
         child: RaisedButton(
           child: Text('Go!'),

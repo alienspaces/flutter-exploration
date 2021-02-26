@@ -19,7 +19,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AnimatedContainer Demo'),
+        title: Text('Animated Container'),
       ),
       body: Center(
         // Creates a container that animates its parameters implicitly.

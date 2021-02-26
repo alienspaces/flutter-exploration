@@ -8,7 +8,7 @@ class ButtonRippleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ripple\'n Widget'),
+        title: Text('Button Ripple'),
       ),
       body: Container(
         child: RippleButton(),

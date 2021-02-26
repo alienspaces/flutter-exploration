@@ -68,6 +68,13 @@ class HomeScreen extends StatelessWidget {
       return routeList;
     }
 
+    // Content margin
+    EdgeInsetsGeometry margin;
+    if (MediaQuery.of(context).size.width > 800) {
+      double marginLeftRight = (MediaQuery.of(context).size.width - 800) / 2;
+      margin = EdgeInsets.fromLTRB(marginLeftRight, 0, marginLeftRight, 0);
+    }
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
@@ -86,8 +93,11 @@ class HomeScreen extends StatelessWidget {
               child: Text('Flutter Exploration', style: Theme.of(context).textTheme.headline5),
             ),
             Expanded(
-              child: ListView(
-                children: buildScreenList(),
+              child: Container(
+                margin: margin,
+                child: ListView(
+                  children: buildScreenList(),
+                ),
               ),
             ),
             Container(
