@@ -1,3 +1,5 @@
+/// Define RouteCategory(ies), RouteConfig(s) and screens here and they will
+/// be added to the list of screens displayed on the home page
 import 'package:flutter/material.dart';
 
 // Application packages
@@ -33,9 +35,7 @@ import 'package:flutterexploration/screens/snackbar.dart';
 import 'package:flutterexploration/screens/tabs.dart';
 import 'package:flutterexploration/screens/widget_fade.dart';
 
-/// Define RouteCategory(ies), RouteConfig(s) and screens here and they will
-/// be added to the list of screens displayed on the home page
-
+/// Defines a category of route
 class RouteCategory {
   String name;
   String description;
@@ -44,6 +44,7 @@ class RouteCategory {
   RouteCategory({this.name, this.description, this.routes});
 }
 
+/// Defines a route
 class RouteConfig {
   String name;
   String description;
@@ -51,15 +52,15 @@ class RouteConfig {
   bool isDefault;
 
   RouteConfig({this.name, this.description, this.screen, this.isDefault = false});
+}
 
-  /// Converts a given string to snake-case
-  static String toSnakeCase(String str) {
-    return str
-        .replaceAllMapped(
-            RegExp(r'[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+'),
-            (Match m) => "${m[0].toLowerCase()}")
-        .replaceAll(RegExp(r'(-|\s)+'), '_');
-  }
+/// Converts a given string to snake-case for usage as a Flutter route
+String toSnakeCase(String str) {
+  return str
+      .replaceAllMapped(
+          RegExp(r'[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+'),
+          (Match m) => "${m[0].toLowerCase()}")
+      .replaceAll(RegExp(r'(-|\s)+'), '_');
 }
 
 List<RouteCategory> routeCategories = [
@@ -386,20 +387,20 @@ List<RouteConfig> routes = [
   ),
 ];
 
-// Generate application RouteConfigs
+/// Returns a list of all configured routes
 Map<String, Widget Function(BuildContext)> getRoutes() {
   Map<String, Widget Function(BuildContext)> applicationRouteConfigs = {};
 
   routeCategories.forEach((routeCategory) {
     routeCategory.routes.forEach((route) {
-      applicationRouteConfigs[RouteConfig.toSnakeCase(route.name)] = (context) => route.screen;
+      applicationRouteConfigs[toSnakeCase(route.name)] = (context) => route.screen;
     });
   });
 
   return applicationRouteConfigs;
 }
 
-// Generate application RouteConfigs
+/// Returns the first configured default route
 RouteConfig getDefaultRoute() {
   for (var categoryIdx = 0; categoryIdx < routeCategories.length; categoryIdx++) {
     var routeCategory = routeCategories[categoryIdx];

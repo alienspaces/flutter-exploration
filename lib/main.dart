@@ -13,7 +13,7 @@ void main() {
   runApp(
     MaterialApp(
       theme: getTheme(),
-      initialRoute: RouteConfig.toSnakeCase(defaultRoute.name),
+      initialRoute: toSnakeCase(defaultRoute.name),
       routes: getRoutes(),
     ),
   );

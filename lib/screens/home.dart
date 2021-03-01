@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () => {
-                  Navigator.of(context).pushNamed(RouteConfig.toSnakeCase(route.name)),
+                  Navigator.of(context).pushNamed(toSnakeCase(route.name)),
                 },
                 child: Container(
                   alignment: Alignment.centerLeft,

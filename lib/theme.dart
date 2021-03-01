@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Returns the application theme data
 ThemeData getTheme() {
   return ThemeData(
     // Default font family.
