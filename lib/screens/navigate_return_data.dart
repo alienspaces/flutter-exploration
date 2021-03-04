@@ -20,7 +20,7 @@ class NavigateReturnDataScreen extends StatelessWidget {
 class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context); // shit function name
       },
@@ -54,7 +54,7 @@ class SelectionScreen extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context, 'Yeah.. sounds cool!');
                 },
@@ -63,7 +63,7 @@ class SelectionScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context, 'Yeah.. nah..');
                 },

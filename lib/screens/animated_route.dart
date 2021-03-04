@@ -10,7 +10,7 @@ class AnimatedRouteScreen extends StatelessWidget {
         title: Text('Animated Route'),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Go!'),
           onPressed: () {
             Navigator.of(context).push(_createRoute());

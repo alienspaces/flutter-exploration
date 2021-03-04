@@ -20,7 +20,7 @@ class NavigateArgumentsScreen extends StatelessWidget {
             child: Text(args != null ? args.message : 'No args message'),
           ),
           Center(
-            child: RaisedButton(
+            child: ElevatedButton(
               child: Text('Navigate to myself and extract arguments'),
               onPressed: () {
                 Navigator.pushNamed(

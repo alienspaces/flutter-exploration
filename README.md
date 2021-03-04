@@ -6,7 +6,7 @@ A collection of Flutter screens for purposes of learning and experimenting with 
 
 [https://alienspaces.github.io/flutter-exploration](https://alienspaces.github.io/flutter-exploration)
 
-Most examples work with web support.
+**Most** examples work with web support.
 
 ## Get Started
 
@@ -19,22 +19,10 @@ Most examples work with web support.
 
 Install Flutter manually by [cloning the git repository](https://flutter.dev/docs/get-started/install/linux) so the Flutter version can be set specifically.
 
-Flutter version set to `beta` channel version `1.25.0-8.1.pre` for [web support](https://flutter.dev/docs/development/platform-integration/web) prior to `null safety`.
+Flutter `stable` channel version `2.0.0`.
 
 ```sh
-flutter channel beta
-```
-
-If you have issues setting the Flutter version navigate to your Flutter git repository and checkout the `1.25.0-8.1.pre` tag.
-
-```sh
-# Where you installed Fluuter
-cd ~/flutter
-# Checkout specific beta version
-git checkout 1.25.0-8.1.pre
-cd -
-flutter pub get
-flutter run
+flutter channel stable
 ```
 
 ## Flutter Sources

@@ -17,7 +17,7 @@ class SnackBarBodyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: RaisedButton(
+      child: ElevatedButton(
         onPressed: () {
           final snackBar = SnackBar(
             content: Text('Yay! A Snackbar?!'),

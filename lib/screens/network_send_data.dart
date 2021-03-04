@@ -64,7 +64,7 @@ class _NetworkSendDataScreenState extends State<NetworkSendDataScreen> {
                     controller: _controller,
                     decoration: InputDecoration(hintText: 'Enter Title'),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     child: Text('Create Data'),
                     onPressed: () {
                       setState(() {

@@ -11,7 +11,7 @@ class NavigateNamedScreen extends StatelessWidget {
         title: Text('Page 1'),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Launch Screen'),
           onPressed: () {
             Navigator.pushNamed(context, '/navigate-named-second');
@@ -30,7 +30,7 @@ class NavigateNamedSecondScreen extends StatelessWidget {
         title: Text('Page 2'),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Go Back!'),
           onPressed: () {
             Navigator.pop(context);
