@@ -9,13 +9,13 @@ const RESOURCES = {
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
 "assets/assets/images/loading.gif": "0c6701a695f275e8af1c69cb38e98b4b",
 "assets/AssetManifest.json": "5d5e90850a951fff6e0809ba83134bf5",
-"assets/NOTICES": "84c70832faca6879b7cde6e2d11662da",
+"assets/NOTICES": "0f8ef577d1a69c71f77ba35de5226a2e",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"main.dart.js": "eb260fd3e7c07a09e0b3f9b3ff568214",
+"main.dart.js": "1e5d56be721e30aafc75717306adcfab",
 "manifest.json": "190711d25f577894a01d6e4cc37c8249",
-"index.html": "498af93eede7ee8d0de744072a7d987d",
-"/": "498af93eede7ee8d0de744072a7d987d",
+"index.html": "3618ce9a85cf63744d7a06a60cd4bb8a",
+"/": "3618ce9a85cf63744d7a06a60cd4bb8a",
 "version.json": "cbc504d1ea811921213ee8d0c9c6e1e8"
 };
 
