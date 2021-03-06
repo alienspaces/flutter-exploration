@@ -1,0 +1,16 @@
+targets:
+  flutterexploration:
+    builders:
+      flutterexploration|sourceWidgetBuilder:
+        enabled: True
+        generate_for:
+          - lib/screens/*
+
+builders:
+  sourceWidgetBuilder:
+    import: 'package:flutterexploration/generator.dart'
+    builder_factories: ['sourceWidgetBuilder']
+    build_extensions:
+      .dart:
+        - _source.dart
+    build_to: source

@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:flutter_highlight/flutter_highlight.dart';
+import 'package:flutter_highlight/themes/github.dart';
+
+class SourceWidget extends StatelessWidget {
+
+  final String textContent = '''
+  
+import \'package:flutter/material.dart\';
+import \'dart:math\';
 
 // Application packages
-import 'package:flutterexploration/screens/animated_container_source.dart';
+import \'package:flutterexploration/screens/animated_container_source.dart\';
 
 class AnimatedContainerScreen extends StatefulWidget {
-  static String name = 'Animated Container';
-  static String description = 'Randomly adjust the properties of an AnimatedContainer';
+  static String name = \'Animated Container\';
+  static String description = \'Randomly adjust the properties of an AnimatedContainer\';
 
   @override
   _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
@@ -22,7 +30,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Animated Container'),
+        title: Text(\'Animated Container\'),
       ),
       body: Container(
         child: Row(
@@ -30,7 +38,6 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
             Expanded(
               flex: 1,
               child: Container(
-                alignment: Alignment.center,
                 // Creates a container that animates its parameters implicitly.
                 child: AnimatedContainer(
                   width: _width,
@@ -46,10 +53,8 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
             ),
             Expanded(
               flex: 1,
-              child: Scrollbar(
-                child: SingleChildScrollView(
-                  child: SourceWidget(),
-                ),
+              child: Container(
+                child: SourceWidget(),
               ),
             ),
           ],
@@ -72,6 +77,25 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
             _borderRadius = BorderRadius.circular(r.nextInt(100).toDouble());
           });
         },
+      ),
+    );
+  }
+}
+
+  ''';
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: HighlightView(
+        "$textContent", 
+        language: 'dart',
+        theme: githubTheme,
+        padding: EdgeInsets.all(12),
+        textStyle: TextStyle(
+          fontFamily: 'My awesome monospace font',
+          fontSize: 16,
+        ),
       ),
     );
   }
