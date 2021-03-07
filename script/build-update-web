@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
 
-# The `docs` directory is where this repositories github pages is 
-# configured to serve documents from. This scripts builds the web
-# version and updates the `docs` directory with the result.
+# This scripts builds a web version of the application and 
+# updates the `docs` directory with the result.
 flutter channel stable
+
+# Generate source pages
+flutter pub run build_runner build
+
+# Build the web version
 flutter build web
+
+# Copy into the Github pages location
 cp -r build/web/* ./docs
+
+# Git add and commit
 git add .
 git status
 git commit -m "Updated web build"
