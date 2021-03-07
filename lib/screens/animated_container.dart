@@ -3,6 +3,8 @@ import 'dart:math';
 
 // Application packages
 import 'package:flutterexploration/screens/animated_container_source.dart';
+import 'package:flutterexploration/widgets/open_source_drawer.dart';
+import 'package:flutterexploration/widgets/source_drawer.dart';
 
 class AnimatedContainerScreen extends StatefulWidget {
   static String name = 'Animated Container';
@@ -20,29 +22,17 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  void _openEndDrawer() {
-    _scaffoldKey.currentState.openEndDrawer();
-  }
-
-  void _closeEndDrawer() {
-    Navigator.of(context).pop();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(title: Text('Animated Container'), actions: <Widget>[
-        // Show source code
-        Container(
-          width: 100,
-          height: 50,
-          child: ElevatedButton(
-            onPressed: _openEndDrawer,
-            child: Text('Code'),
-          ),
-        ),
-      ]),
+      appBar: AppBar(
+        title: Text('Animated Container'),
+        actions: <Widget>[
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
+        ],
+      ),
       body: Container(
         alignment: Alignment.center,
         // Creates a container that animates its parameters implicitly.
@@ -58,23 +48,9 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
         ),
       ),
       // Source Code
-      endDrawer: Stack(
-        alignment: AlignmentDirectional.topEnd,
-        children: <Widget>[
-          Scrollbar(
-            child: SingleChildScrollView(
-              child: SourceWidget(),
-            ),
-          ),
-          Container(
-            width: 100,
-            height: 50,
-            child: ElevatedButton(
-              onPressed: _closeEndDrawer,
-              child: const Text('Close Drawer'),
-            ),
-          ),
-        ],
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.play_arrow),
