@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// Application packages
+import 'package:flutterexploration/widgets/close_source_drawer.dart';
+
 class SourceDrawerWidget extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
   final Widget sourceWidget;
@@ -8,10 +11,6 @@ class SourceDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void _closeEndDrawer() {
-      Navigator.of(context).pop();
-    }
-
     return Stack(
       alignment: AlignmentDirectional.topEnd,
       children: <Widget>[
@@ -20,13 +19,8 @@ class SourceDrawerWidget extends StatelessWidget {
             child: sourceWidget,
           ),
         ),
-        Container(
-          width: 100,
-          height: 50,
-          child: ElevatedButton(
-            onPressed: _closeEndDrawer,
-            child: const Text('Hide Code'),
-          ),
+        CloseSourceDrawerWidget(
+          scaffoldKey: scaffoldKey,
         ),
       ],
     );

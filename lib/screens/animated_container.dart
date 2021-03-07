@@ -3,6 +3,7 @@ import 'dart:math';
 
 // Application packages
 import 'package:flutterexploration/screens/animated_container_source.dart';
+import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
 
@@ -20,19 +21,29 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
   Color _color = Colors.green;
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
 
+  // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
+      // Common application bar
       appBar: AppBar(
-        title: Text('Animated Container'),
+        title: Text(AnimatedContainerScreen.name),
         actions: <Widget>[
           // Open source code
           OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
         ],
       ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: Container(
         alignment: Alignment.center,
         // Creates a container that animates its parameters implicitly.
@@ -46,11 +57,6 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
           duration: Duration(seconds: 1),
           curve: Curves.fastOutSlowIn,
         ),
-      ),
-      // Source Code
-      endDrawer: SourceDrawerWidget(
-        scaffoldKey: _scaffoldKey,
-        sourceWidget: SourceWidget(),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.play_arrow),
