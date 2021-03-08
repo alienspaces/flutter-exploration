@@ -1,23 +1,46 @@
 import 'package:flutter/material.dart';
 
+// Application packages
+import 'package:flutterexploration/screens/button_ripple_source.dart';
+import 'package:flutterexploration/widgets/screen_list_drawer.dart';
+import 'package:flutterexploration/widgets/open_source_drawer.dart';
+import 'package:flutterexploration/widgets/source_drawer.dart';
+
 class ButtonRippleScreen extends StatelessWidget {
   static String name = 'Button Ripple';
   static String description = 'Utilise an InkWell for ripple effects';
 
+  // Key for source drawer
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      // Common application bar
       appBar: AppBar(
-        title: Text('Button Ripple'),
+        title: Text(ButtonRippleScreen.name),
+        actions: <Widget>[
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
+        ],
       ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: Container(
-        child: RippleButton(),
+        child: ButtonRippleWidget(),
       ),
     );
   }
 }
 
-class RippleButton extends StatelessWidget {
+class ButtonRippleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(

@@ -1,14 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
+// Application packages
+import 'package:flutterexploration/screens/draggable_card_source.dart';
+import 'package:flutterexploration/widgets/screen_list_drawer.dart';
+import 'package:flutterexploration/widgets/open_source_drawer.dart';
+import 'package:flutterexploration/widgets/source_drawer.dart';
+
 class DraggableCardScreen extends StatelessWidget {
   static String name = 'Draggable';
   static String description = 'Draggable Card with GestureDetector';
 
+  // Key for source drawer
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      key: _scaffoldKey,
+      // Common application bar
+      appBar: AppBar(
+        title: Text(DraggableCardScreen.name),
+        actions: <Widget>[
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
+        ],
+      ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: DraggableCard(
         child: FlutterLogo(
           size: 128,

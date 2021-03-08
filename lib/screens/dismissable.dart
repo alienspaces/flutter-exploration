@@ -1,15 +1,38 @@
 import 'package:flutter/material.dart';
 
+// Application packages
+import 'package:flutterexploration/screens/dismissable_source.dart';
+import 'package:flutterexploration/widgets/screen_list_drawer.dart';
+import 'package:flutterexploration/widgets/open_source_drawer.dart';
+import 'package:flutterexploration/widgets/source_drawer.dart';
+
 class DismissableScreen extends StatelessWidget {
   static String name = 'Dismissable List';
   static String description = 'ListView with Dismissable items';
 
+  // Key for source drawer
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      // Common application bar
       appBar: AppBar(
-        title: Text('Dismissable List Thinger'),
+        title: Text(DismissableScreen.name),
+        actions: <Widget>[
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
+        ],
       ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: DismissibleList(),
     );
   }

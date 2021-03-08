@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Application packages
-import 'package:flutterexploration/screens/animated_container_source.dart';
+import 'package:flutterexploration/screens/animated_route_source.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -31,6 +31,7 @@ class AnimatedRouteScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
+      // Example
       body: Center(
         child: ElevatedButton(
           child: Text('Go!'),

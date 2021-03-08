@@ -1,36 +1,41 @@
 import 'package:flutter/material.dart';
 
+// Application packages
+import 'package:flutterexploration/screens/counter_source.dart';
+import 'package:flutterexploration/widgets/screen_list_drawer.dart';
+import 'package:flutterexploration/widgets/open_source_drawer.dart';
+import 'package:flutterexploration/widgets/source_drawer.dart';
+
 class CounterScreen extends StatelessWidget {
   static String name = 'Counter';
   static String description = 'Scaffold with a counter';
 
+  // Key for source drawer
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      // Example AppBar
+      key: _scaffoldKey,
+      // Common application bar
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        textTheme: Theme.of(context).textTheme,
-        leading: IconButton(
-          icon: Icon(Icons.backspace_rounded),
-          color: Theme.of(context).colorScheme.onPrimary,
-          tooltip: 'Navigation menu',
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        title: Text('Example AppBar Navigation'),
+        title: Text(CounterScreen.name),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            disabledColor: Theme.of(context).colorScheme.onPrimary.withAlpha(128),
-            tooltip: 'Search',
-            onPressed: null,
-          ),
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
         ],
       ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: Center(
         // Counter widget is imported from our application widgets library
-        child: Counter(),
+        child: CounterWidget(),
       ),
       // Example FloatingActionButton
       floatingActionButton: FloatingActionButton(
@@ -81,12 +86,12 @@ class CounterIncrementor extends StatelessWidget {
 
 /// Counter demonstrates a StatefulWidget that passes
 /// its state to child widgets.
-class Counter extends StatefulWidget {
+class CounterWidget extends StatefulWidget {
   @override
-  _CounterState createState() => _CounterState();
+  _CounterWidgetState createState() => _CounterWidgetState();
 }
 
-class _CounterState extends State<Counter> {
+class _CounterWidgetState extends State<CounterWidget> {
   int _counter = 0;
 
   void _increment() {
