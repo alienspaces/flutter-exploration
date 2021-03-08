@@ -8,6 +8,12 @@ class SourceWidget extends StatelessWidget {
   
 import \'package:flutter/material.dart\';
 
+// Application packages
+import \'package:flutterexploration/screens/shopping_list_source.dart\';
+import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
+import \'package:flutterexploration/widgets/open_source_drawer.dart\';
+import \'package:flutterexploration/widgets/source_drawer.dart\';
+
 class ShoppingListScreen extends StatefulWidget {
   static String name = \'Shopping List\';
   static String description = \'A shopping list\';
@@ -23,6 +29,9 @@ class ShoppingListScreen extends StatefulWidget {
 class _ShoppingListState extends State<ShoppingListScreen> {
   Set<Product> _shoppingCart = Set<Product>();
   List<Product> cartProducts;
+
+  // Key for source drawer
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   void _handleCardChanged(Product product, bool inCart) {
     setState(() {
@@ -51,9 +60,23 @@ class _ShoppingListState extends State<ShoppingListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      // Common application bar
       appBar: AppBar(
-        title: Text(\'Shopping List\'),
+        title: Text(ShoppingListScreen.name),
+        actions: <Widget>[
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
+        ],
       ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 8.0),
         children: cartProducts.map((Product product) {

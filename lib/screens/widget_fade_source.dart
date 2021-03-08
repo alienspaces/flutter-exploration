@@ -8,6 +8,18 @@ class SourceWidget extends StatelessWidget {
   
 import \'package:flutter/material.dart\';
 
+// Application packages
+import \'package:flutterexploration/screens/widget_fade_source.dart\';
+import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
+import \'package:flutterexploration/widgets/open_source_drawer.dart\';
+import \'package:flutterexploration/widgets/source_drawer.dart\';
+
+Container fadingContainer = Container(
+  width: 200.0,
+  height: 200.0,
+  color: Colors.green,
+);
+
 class WidgetFadeScreen extends StatefulWidget {
   static String name = \'Widget Fade\';
   static String description = \'Fade a widget in and out\';
@@ -20,21 +32,32 @@ class WidgetFadeScreen extends StatefulWidget {
   _WidgetFadeScreenState createState() => _WidgetFadeScreenState();
 }
 
-Container fadingContainer = Container(
-  width: 200.0,
-  height: 200.0,
-  color: Colors.green,
-);
-
 class _WidgetFadeScreenState extends State<WidgetFadeScreen> {
   bool _visible = true;
+
+  // Key for source drawer
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      // Common application bar
       appBar: AppBar(
-        title: Text(\'Fading Container\'),
+        title: Text(WidgetFadeScreen.name),
+        actions: <Widget>[
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
+        ],
       ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: Container(
         padding: EdgeInsets.all(50.0),
         child: Row(

@@ -8,16 +8,39 @@ class SourceWidget extends StatelessWidget {
   
 import \'package:flutter/material.dart\';
 
+// Application packages
+import \'package:flutterexploration/screens/listview_source.dart\';
+import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
+import \'package:flutterexploration/widgets/open_source_drawer.dart\';
+import \'package:flutterexploration/widgets/source_drawer.dart\';
+
 class ListViewScreen extends StatelessWidget {
   static String name = \'ListView\';
   static String description = \'A very simple ListView with static items\';
 
+  // Key for source drawer
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      // Common application bar
       appBar: AppBar(
-        title: Text(\'ListView Example\'),
+        title: Text(ListViewScreen.name),
+        actions: <Widget>[
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
+        ],
       ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: Column(
         children: <Widget>[
           Container(
