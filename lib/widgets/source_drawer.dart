@@ -11,18 +11,23 @@ class SourceDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.topEnd,
-      children: <Widget>[
-        Scrollbar(
-          child: SingleChildScrollView(
-            child: sourceWidget,
-          ),
+    return Container(
+      width: 800,
+      child: Drawer(
+        child: Stack(
+          alignment: AlignmentDirectional.topEnd,
+          children: <Widget>[
+            Scrollbar(
+              child: SingleChildScrollView(
+                child: sourceWidget,
+              ),
+            ),
+            CloseSourceDrawerWidget(
+              scaffoldKey: scaffoldKey,
+            ),
+          ],
         ),
-        CloseSourceDrawerWidget(
-          scaffoldKey: scaffoldKey,
-        ),
-      ],
+      ),
     );
   }
 }
