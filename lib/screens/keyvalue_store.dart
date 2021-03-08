@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// Application packages
+import 'package:flutterexploration/screens/keyvalue_store_source.dart';
+import 'package:flutterexploration/widgets/screen_list_drawer.dart';
+import 'package:flutterexploration/widgets/open_source_drawer.dart';
+import 'package:flutterexploration/widgets/source_drawer.dart';
+
 class KeyValueStoreScreen extends StatefulWidget {
   static String name = 'KeyValue Store';
   static String description = 'Read and write values using SharedPreferences';
@@ -14,6 +20,10 @@ class KeyValueStoreScreen extends StatefulWidget {
 
 class _KeyValueStoreScreenState extends State<KeyValueStoreScreen> {
   int _counter = 0;
+
+  // Key for source drawer
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   void initState() {
     super.initState();
@@ -38,9 +48,23 @@ class _KeyValueStoreScreenState extends State<KeyValueStoreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      // Common application bar
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(KeyValueStoreScreen.name),
+        actions: <Widget>[
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
+        ],
       ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

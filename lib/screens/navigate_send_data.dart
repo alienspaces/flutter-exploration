@@ -1,6 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// Application packages
+import 'package:flutterexploration/screens/navigate_send_data_source.dart';
+import 'package:flutterexploration/widgets/screen_list_drawer.dart';
+import 'package:flutterexploration/widgets/open_source_drawer.dart';
+import 'package:flutterexploration/widgets/source_drawer.dart';
+
 class Todo {
   final String title;
   final String description;
@@ -20,12 +26,29 @@ class NavigateSendDataScreen extends StatelessWidget {
   static String name = 'Navigate Pass Data';
   static String description = 'Navigate and pass data';
 
+  // Key for source drawer
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      // Common application bar
       appBar: AppBar(
-        title: Text('Todos'),
+        title: Text(NavigateSendDataScreen.name),
+        actions: <Widget>[
+          // Open source code
+          OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
+        ],
       ),
+      // Screen list drawer
+      drawer: ScreenListDrawerWidget(),
+      // Source Code drawer
+      endDrawer: SourceDrawerWidget(
+        scaffoldKey: _scaffoldKey,
+        sourceWidget: SourceWidget(),
+      ),
+      // Example
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
