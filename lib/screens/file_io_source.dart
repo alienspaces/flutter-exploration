@@ -121,11 +121,12 @@ class CounterStorage {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.topLeft,
+      margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
       child: HighlightView(
         "$textContent", 
         language: 'dart',
         theme: githubTheme,
-        padding: EdgeInsets.all(12),
         textStyle: TextStyle(
           fontFamily: 'My awesome monospace font',
           fontSize: 16,
