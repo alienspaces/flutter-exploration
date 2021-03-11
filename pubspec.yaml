@@ -30,7 +30,7 @@ dependencies:
   # This package contains a set of high-level functions and classes that make 
   # it easy to consume HTTP resources. It's multi-platform, and supports mobile, 
   # desktop, and the browser.
-  http: ^0.12.1
+  http: ^0.13.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -49,16 +49,19 @@ dependencies:
 
   # A Flutter plugin for finding commonly used locations on the filesystem. Supports 
   # iOS, Android, Linux and MacOS. Not all methods are supported on all platforms.
-  path_provider: ^1.6.11
+  path_provider: 2.0.0
 
   # Wraps platform-specific persistent storage for simple data (NSUserDefaults on iOS 
   # and macOS, SharedPreferences on Android, etc.). Data may be persisted to disk asynchronously, 
   # and there is no guarantee that writes will be persisted to disk after returning, so this 
   # plugin must not be used for storing critical data.
-  shared_preferences: 0.5.8
+  shared_preferences: 2.0.4
 
   # Provides APIs for debugging and error logging.
   logging: 1.0.0
+
+  # A package to include fonts from fonts.google.com in your Flutter app.
+  google_fonts: 2.0.0
 
   # Syntax highlighting widget for Flutter with lots of languages and themes support.
   flutter_highlight: 0.6.0
@@ -93,7 +96,8 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/loading.gif
-    
+    - assets/fonts/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 /// Returns the application theme data
-ThemeData getTheme() {
+ThemeData getTheme(BuildContext context) {
   return ThemeData(
     // Default font family.
-    fontFamily: 'Open Sans',
+    fontFamily: 'Lato',
 
     // NOTE: Setting the primaryColor provides some consistency
     // across screen colours as not all Flutter components correctly
@@ -12,67 +13,8 @@ ThemeData getTheme() {
     primaryColor: Color(0xFF9fa8da),
 
     // Default text theme.
-    textTheme: TextTheme(
-      headline1: TextStyle(
-        fontSize: 96.0,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-      ),
-      headline2: TextStyle(
-        fontSize: 60.0,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-      ),
-      headline3: TextStyle(
-        fontSize: 48.0,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-      ),
-      headline4: TextStyle(
-        fontSize: 34.0,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-      ),
-      headline5: TextStyle(
-        fontSize: 24.0,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-      ),
-      headline6: TextStyle(
-        fontSize: 20.0,
-        fontStyle: FontStyle.italic,
-        color: Colors.black,
-      ),
-      subtitle1: TextStyle(
-        fontSize: 16.0,
-        fontFamily: 'Open Sans',
-        color: Colors.black,
-      ),
-      subtitle2: TextStyle(
-        fontSize: 14.0,
-        fontFamily: 'Open Sans',
-        color: Colors.black,
-      ),
-      bodyText1: TextStyle(
-        fontSize: 16.0,
-        fontFamily: 'Open Sans',
-        color: Colors.black,
-      ),
-      bodyText2: TextStyle(
-        fontSize: 14.0,
-        fontFamily: 'Open Sans',
-        color: Colors.black,
-      ),
-      overline: TextStyle(
-        fontSize: 10.0,
-        fontFamily: 'Open Sans',
-        color: Colors.black,
-      ),
-      caption: TextStyle(
-        fontSize: 12.0,
-        fontFamily: 'Open Sans',
-        color: Colors.black,
-      ),
+    textTheme: GoogleFonts.latoTextTheme(
+      Theme.of(context).textTheme,
     ),
     colorScheme: ColorScheme(
       brightness: Brightness.light,

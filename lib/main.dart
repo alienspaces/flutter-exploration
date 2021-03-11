@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
 
@@ -11,16 +13,21 @@ void main() {
     print('${record.level.name}: ${record.time}: ${record.message}');
   });
 
-  var defaultRoute = getDefaultRoute();
-  if (defaultRoute == null) {
-    throw 'Default route not configured, cannot continue';
-  }
+  runApp(Application());
+}
 
-  runApp(
-    MaterialApp(
-      theme: getTheme(),
+class Application extends StatelessWidget {
+  @override
+  build(BuildContext context) {
+    var defaultRoute = getDefaultRoute();
+    if (defaultRoute == null) {
+      throw 'Default route not configured, cannot continue';
+    }
+
+    return MaterialApp(
+      theme: getTheme(context),
       initialRoute: toSnakeCase(defaultRoute.name),
       routes: getRoutes(),
-    ),
-  );
+    );
+  }
 }
