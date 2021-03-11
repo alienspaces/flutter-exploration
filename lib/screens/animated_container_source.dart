@@ -3,7 +3,6 @@ import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/github.dart';
 
 class SourceWidget extends StatelessWidget {
-
   final String textContent = '''
   
 import \'package:flutter/material.dart\';
@@ -93,11 +92,12 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.topLeft,
+      margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
       child: HighlightView(
-        "$textContent", 
+        "$textContent",
         language: 'dart',
         theme: githubTheme,
-        padding: EdgeInsets.all(12),
         textStyle: TextStyle(
           fontFamily: 'My awesome monospace font',
           fontSize: 16,
