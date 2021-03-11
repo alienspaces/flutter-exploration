@@ -108,7 +108,7 @@ class Album {
 
 Future<Album> createAlbum(String title) async {
   final http.Response response = await http.post(
-    \'https://jsonplaceholder.typicode.com/albums\',
+    Uri(host: \'https://jsonplaceholder.typicode.com/albums\'),
     headers: <String, String>{
       HttpHeaders.contentTypeHeader: \'application/json; charset=UTF-8\',
     },

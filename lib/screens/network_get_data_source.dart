@@ -75,7 +75,7 @@ class _NetworkGetDataScreenState extends State<NetworkGetDataScreen> {
 }
 
 Future<Album> fetchAlbum() async {
-  final response = await http.get(\'https://jsonplaceholder.typicode.com/albums/2\');
+  final response = await http.get(Uri(host: \'https://jsonplaceholder.typicode.com/albums/2\'));
   if (response.statusCode == 200) {
     return Album.fromJson(json.decode(response.body));
   } else {
