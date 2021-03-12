@@ -26,7 +26,7 @@ ThemeData getTheme(BuildContext context) {
       onSecondary: Colors.black,
       error: Colors.orange[100],
       onError: Colors.black,
-      background: Color(0xFFE1E2E1),
+      background: Color(0xFFF8F8F8),
       onBackground: Colors.black,
       surface: Color(0xFFd1d9ff),
       onSurface: Colors.black,

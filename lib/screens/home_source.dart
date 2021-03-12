@@ -55,14 +55,20 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-      child: HighlightView(
-        "$textContent", 
-        language: 'dart',
-        theme: githubTheme,
-        textStyle: TextStyle(
-          fontFamily: 'My awesome monospace font',
-          fontSize: 16,
+      color: Theme.of(context).colorScheme.background,
+      child: Expanded(
+        child: Container(
+          color: Theme.of(context).colorScheme.secondary,
+          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+          child: HighlightView(
+            "$textContent",
+            language: 'dart',
+            theme: githubTheme,
+            padding: EdgeInsets.fromLTRB(20, 40, 0, 0),
+            textStyle: TextStyle(
+              fontSize: 16,
+            ),
+          ),
         ),
       ),
     );

@@ -19,7 +19,7 @@ A collection of Flutter screens for purposes of learning and experimenting with 
 
 Install Flutter manually by [cloning the git repository](https://flutter.dev/docs/get-started/install/linux) so the Flutter version can be set specifically.
 
-Flutter `stable` channel version `2.0.0`.
+Flutter `stable` channel version `2.0.1`.
 
 ```sh
 flutter channel stable
