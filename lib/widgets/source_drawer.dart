@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-// Application packages
-import 'package:flutterexploration/widgets/close_source_drawer.dart';
-
 class SourceDrawerWidget extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
   final Widget sourceWidget;
@@ -11,8 +8,17 @@ class SourceDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Adjust font size based on screen width
+    double width = MediaQuery.of(context).size.width;
+    double containerWidth = width / 1.15;
+    if (width > 2048) {
+      containerWidth = width / 2;
+    } else if (width > 1024) {
+      containerWidth = width / 1.5;
+    }
+
     return Container(
-      width: 800,
+      width: containerWidth,
       child: Drawer(
         child: Stack(
           alignment: AlignmentDirectional.topEnd,
@@ -21,9 +27,6 @@ class SourceDrawerWidget extends StatelessWidget {
               child: SingleChildScrollView(
                 child: sourceWidget,
               ),
-            ),
-            CloseSourceDrawerWidget(
-              scaffoldKey: scaffoldKey,
             ),
           ],
         ),

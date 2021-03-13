@@ -16,7 +16,7 @@ class OpenSourceDrawerWidget extends StatelessWidget {
       height: 50,
       child: ElevatedButton(
         onPressed: _openEndDrawer,
-        child: Text('Show Code'),
+        child: Text('Code'),
       ),
     );
   }

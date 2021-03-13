@@ -40,6 +40,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
       ),
       // Screen list drawer
       drawer: ScreenListDrawerWidget(),
+      drawerEdgeDragWidth: 80,
       // Source Code drawer
       endDrawer: SourceDrawerWidget(
         scaffoldKey: _scaffoldKey,

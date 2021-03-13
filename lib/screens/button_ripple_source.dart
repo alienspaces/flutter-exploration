@@ -55,20 +55,22 @@ class ButtonRippleScreen extends StatelessWidget {
 class ButtonRippleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(\'Tapper tapper\'),
-            duration: Duration(milliseconds: 500),
-          ),
-        );
-      },
-      child: Container(
-        padding: EdgeInsets.all(12.0),
-        width: 400,
-        height: 400,
-        child: Text(\'Flat Button\', textAlign: TextAlign.center),
+    return Material(
+      child: InkWell(
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(\'Tapper tapper\'),
+              duration: Duration(milliseconds: 500),
+            ),
+          );
+        },
+        child: Container(
+          padding: EdgeInsets.all(12.0),
+          width: 400,
+          height: 400,
+          child: Text(\'Flat Button\', textAlign: TextAlign.center),
+        ),
       ),
     );
   }
@@ -78,21 +80,31 @@ class ButtonRippleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // Adjust font size based on screen width
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    double fontSize = 20;
+    if (width < 1024) {
+      fontSize = 14;
+    } else if (width < 2048) {
+      fontSize = 18;
+    }
+
     return Container(
       alignment: Alignment.topLeft,
       color: Theme.of(context).colorScheme.background,
-      child: Expanded(
-        child: Container(
-          color: Theme.of(context).colorScheme.secondary,
-          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-          child: HighlightView(
-            "$textContent",
-            language: 'dart',
-            theme: githubTheme,
-            padding: EdgeInsets.fromLTRB(20, 40, 0, 0),
-            textStyle: TextStyle(
-              fontSize: 16,
-            ),
+      child: Container(
+        height: height,
+        color: Theme.of(context).colorScheme.secondary,
+        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+        child: HighlightView(
+          "$textContent",
+          language: 'dart',
+          theme: githubTheme,
+          padding: EdgeInsets.fromLTRB(20, 40, 0, 0),
+          textStyle: TextStyle(
+            fontSize: fontSize,
           ),
         ),
       ),

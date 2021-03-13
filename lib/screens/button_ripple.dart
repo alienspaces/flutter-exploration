@@ -47,20 +47,22 @@ class ButtonRippleScreen extends StatelessWidget {
 class ButtonRippleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Tapper tapper'),
-            duration: Duration(milliseconds: 500),
-          ),
-        );
-      },
-      child: Container(
-        padding: EdgeInsets.all(12.0),
-        width: 400,
-        height: 400,
-        child: Text('Flat Button', textAlign: TextAlign.center),
+    return Material(
+      child: InkWell(
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Tapper tapper'),
+              duration: Duration(milliseconds: 500),
+            ),
+          );
+        },
+        child: Container(
+          padding: EdgeInsets.all(12.0),
+          width: 400,
+          height: 400,
+          child: Text('Flat Button', textAlign: TextAlign.center),
+        ),
       ),
     );
   }
