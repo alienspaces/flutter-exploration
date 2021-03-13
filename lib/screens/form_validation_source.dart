@@ -10,6 +10,7 @@ import \'package:flutter/material.dart\';
 
 // Application packages
 import \'package:flutterexploration/screens/form_validation_source.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
@@ -17,6 +18,7 @@ import \'package:flutterexploration/widgets/source_drawer.dart\';
 class FormValidationScreen extends StatelessWidget {
   static String name = \'Form Validation\';
   static String description = \'Validate a form with a TextEditingController\';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -41,7 +43,9 @@ class FormValidationScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: FormWidget(),
+      body: ScreenBodyWidget(
+        child: FormWidget(),
+      ),
     );
   }
 }

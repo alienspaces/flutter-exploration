@@ -10,6 +10,7 @@ import \'package:flutter/material.dart\';
 
 // Application packages
 import \'package:flutterexploration/screens/widget_fade_source.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
@@ -23,6 +24,7 @@ Container fadingContainer = Container(
 class WidgetFadeScreen extends StatefulWidget {
   static String name = \'Widget Fade\';
   static String description = \'Fade a widget in and out\';
+  static bool hide = false;
 
   final String title;
 
@@ -58,17 +60,19 @@ class _WidgetFadeScreenState extends State<WidgetFadeScreen> {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: Container(
-        padding: EdgeInsets.all(50.0),
-        child: Row(
-          children: [
-            Text(\'Press the button to fad in and out\'),
-            AnimatedOpacity(
-              opacity: _visible ? 1.0 : 0.0,
-              duration: Duration(milliseconds: 400),
-              child: fadingContainer,
-            ),
-          ],
+      body: ScreenBodyWidget(
+        child: Container(
+          padding: EdgeInsets.all(50.0),
+          child: Row(
+            children: [
+              Text(\'Press the button to fad in and out\'),
+              AnimatedOpacity(
+                opacity: _visible ? 1.0 : 0.0,
+                duration: Duration(milliseconds: 400),
+                child: fadingContainer,
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -77,7 +81,7 @@ class _WidgetFadeScreenState extends State<WidgetFadeScreen> {
             _visible = !_visible;
           });
         },
-        tooltip: \'Toggly Boggly\',
+        tooltip: \'Toggle\',
         child: Icon(Icons.flip),
       ),
     );

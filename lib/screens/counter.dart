@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/counter_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -9,6 +10,7 @@ import 'package:flutterexploration/widgets/source_drawer.dart';
 class CounterScreen extends StatelessWidget {
   static String name = 'Counter';
   static String description = 'Scaffold with a counter';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -33,9 +35,11 @@ class CounterScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: Center(
-        // Counter widget is imported from our application widgets library
-        child: CounterWidget(),
+      body: ScreenBodyWidget(
+        child: Center(
+          // Counter widget is imported from our application widgets library
+          child: CounterWidget(),
+        ),
       ),
       // Example FloatingActionButton
       floatingActionButton: FloatingActionButton(

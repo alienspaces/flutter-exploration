@@ -15,6 +15,7 @@ import \'package:path_provider/path_provider.dart\';
 
 // Application packages
 import \'package:flutterexploration/screens/file_io_source.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
@@ -22,6 +23,7 @@ import \'package:flutterexploration/widgets/source_drawer.dart\';
 class FileIOScreen extends StatefulWidget {
   static String name = \'File IO\';
   static String description = \'Read and write values from local storage\';
+  static bool hide = false;
 
   final CounterStorage storage = CounterStorage();
 
@@ -74,9 +76,11 @@ class _FileIOScreenState extends State<FileIOScreen> {
           sourceWidget: SourceWidget(),
         ),
         // Example
-        body: Center(
-          child: Text(
-            \'Button tapped \$_counter time\${_counter == 1 ? \'\' : \'s\'}.\',
+        body: ScreenBodyWidget(
+          child: Center(
+            child: Text(
+              \'Button tapped \$_counter time\${_counter == 1 ? \'\' : \'s\'}.\',
+            ),
           ),
         ),
         floatingActionButton: FloatingActionButton(

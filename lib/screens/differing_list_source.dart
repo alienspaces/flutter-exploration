@@ -10,6 +10,7 @@ import \'package:flutter/material.dart\';
 
 // Application packages
 import \'package:flutterexploration/screens/differing_list_source.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
@@ -17,6 +18,7 @@ import \'package:flutterexploration/widgets/source_drawer.dart\';
 class DifferingListScreen extends StatelessWidget {
   static String name = \'Differing List\';
   static String description = \'ListView with ListTiles\';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -41,7 +43,9 @@ class DifferingListScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: ListWidget(),
+      body: ScreenBodyWidget(
+        child: ListWidget(),
+      ),
     );
   }
 }

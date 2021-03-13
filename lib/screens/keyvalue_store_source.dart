@@ -11,6 +11,7 @@ import \'package:shared_preferences/shared_preferences.dart\';
 
 // Application packages
 import \'package:flutterexploration/screens/keyvalue_store_source.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
@@ -18,6 +19,7 @@ import \'package:flutterexploration/widgets/source_drawer.dart\';
 class KeyValueStoreScreen extends StatefulWidget {
   static String name = \'KeyValue Store\';
   static String description = \'Read and write values using SharedPreferences\';
+  static bool hide = false;
 
   KeyValueStoreScreen({Key key}) : super(key: key);
   final String title = \'Key/Value Demo\';
@@ -73,18 +75,20 @@ class _KeyValueStoreScreenState extends State<KeyValueStoreScreen> {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              \'You have pushed the button this many times:\',
-            ),
-            Text(
-              \'\$_counter\',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      body: ScreenBodyWidget(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                \'You have pushed the button this many times:\',
+              ),
+              Text(
+                \'\$_counter\',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(

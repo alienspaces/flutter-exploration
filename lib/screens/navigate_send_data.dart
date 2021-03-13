@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/navigate_send_data_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -25,6 +26,7 @@ final todos = List<Todo>.generate(
 class NavigateSendDataScreen extends StatelessWidget {
   static String name = 'Navigate Pass Data';
   static String description = 'Navigate and pass data';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -49,21 +51,23 @@ class NavigateSendDataScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: ListView.builder(
-        itemCount: todos.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(todos[index].title),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailScreen(todo: todos[index]),
-                ),
-              );
-            },
-          );
-        },
+      body: ScreenBodyWidget(
+        child: ListView.builder(
+          itemCount: todos.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(todos[index].title),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(todo: todos[index]),
+                  ),
+                );
+              },
+            );
+          },
+        ),
       ),
     );
   }

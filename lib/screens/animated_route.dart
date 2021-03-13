@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/animated_route_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -9,6 +10,7 @@ import 'package:flutterexploration/widgets/source_drawer.dart';
 class AnimatedRouteScreen extends StatelessWidget {
   static String name = 'Animated Route';
   static String description = 'Slide transition between two pages';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -32,12 +34,14 @@ class AnimatedRouteScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: Center(
-        child: ElevatedButton(
-          child: Text('Go!'),
-          onPressed: () {
-            Navigator.of(context).push(_createRoute());
-          },
+      body: ScreenBodyWidget(
+        child: Center(
+          child: ElevatedButton(
+            child: Text('Go!'),
+            onPressed: () {
+              Navigator.of(context).push(_createRoute());
+            },
+          ),
         ),
       ),
     );

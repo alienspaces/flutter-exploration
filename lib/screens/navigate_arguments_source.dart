@@ -10,6 +10,7 @@ import \'package:flutter/material.dart\';
 
 // Application packages
 import \'package:flutterexploration/screens/navigate_arguments_source.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
@@ -17,6 +18,7 @@ import \'package:flutterexploration/widgets/source_drawer.dart\';
 class NavigateArgumentsScreen extends StatelessWidget {
   static String name = \'Navigate Arguments\';
   static String description = \'Pass arguments when routing\';
+  static bool hide = false;
 
   static const routeName = \'/navigate-arguments\';
 
@@ -44,28 +46,30 @@ class NavigateArgumentsScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: Column(
-        children: <Widget>[
-          Center(
-            heightFactor: 10.0,
-            child: Text(args != null ? args.message : \'No args message\'),
-          ),
-          Center(
-            child: ElevatedButton(
-              child: Text(\'Navigate to myself and extract arguments\'),
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  NavigateArgumentsScreen.routeName,
-                  arguments: ScreenArguments(
-                    \'Boo!!\',
-                    \'Hahahaha :D\',
-                  ),
-                );
-              },
+      body: ScreenBodyWidget(
+        child: Column(
+          children: <Widget>[
+            Center(
+              heightFactor: 10.0,
+              child: Text(args != null ? args.message : \'No args message\'),
             ),
-          ),
-        ],
+            Center(
+              child: ElevatedButton(
+                child: Text(\'Navigate to myself and extract arguments\'),
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    NavigateArgumentsScreen.routeName,
+                    arguments: ScreenArguments(
+                      \'Boo!!\',
+                      \'Hahahaha :D\',
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

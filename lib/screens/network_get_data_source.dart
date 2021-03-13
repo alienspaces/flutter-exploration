@@ -13,6 +13,7 @@ import \'package:http/http.dart\' as http;
 
 // Application packages
 import \'package:flutterexploration/screens/network_get_data_source.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
@@ -20,6 +21,7 @@ import \'package:flutterexploration/widgets/source_drawer.dart\';
 class NetworkGetDataScreen extends StatefulWidget {
   static String name = \'Network Get\';
   static String description = \'Get data from a REST API\';
+  static bool hide = false;
 
   NetworkGetDataScreen({Key key}) : super(key: key);
   @override
@@ -57,17 +59,19 @@ class _NetworkGetDataScreenState extends State<NetworkGetDataScreen> {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: Center(
-        child: FutureBuilder<Album>(
-          future: futureAlbum,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Text(snapshot.data.title);
-            } else if (snapshot.hasError) {
-              return Text("\${snapshot.error}");
-            }
-            return CircularProgressIndicator();
-          },
+      body: ScreenBodyWidget(
+        child: Center(
+          child: FutureBuilder<Album>(
+            future: futureAlbum,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data.title);
+              } else if (snapshot.hasError) {
+                return Text("\${snapshot.error}");
+              }
+              return CircularProgressIndicator();
+            },
+          ),
         ),
       ),
     );

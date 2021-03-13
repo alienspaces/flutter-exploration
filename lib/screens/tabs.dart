@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/tabs_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -9,6 +10,7 @@ import 'package:flutterexploration/widgets/source_drawer.dart';
 class TabsScreen extends StatelessWidget {
   static String name = 'Tabs';
   static String description = 'A simple TabBar with Tabs';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -42,12 +44,14 @@ class TabsScreen extends StatelessWidget {
           sourceWidget: SourceWidget(),
         ),
         // Example
-        body: TabBarView(
-          children: [
-            Text('Car'),
-            Text('Bicycle'),
-            Text('Bus'),
-          ],
+        body: ScreenBodyWidget(
+          child: TabBarView(
+            children: [
+              Text('Car'),
+              Text('Bicycle'),
+              Text('Bus'),
+            ],
+          ),
         ),
       ),
     );

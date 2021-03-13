@@ -55,6 +55,10 @@ class ScreenListDrawerWidget extends StatelessWidget {
           String routeName = toSnakeCase(route.name);
           bool currentRoute = currentRouteName == routeName;
 
+          if (route.hide == true) {
+            return;
+          }
+
           routeList.add(
             ListTile(
               onTap: () => {

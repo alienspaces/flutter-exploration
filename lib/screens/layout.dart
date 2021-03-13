@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/layout_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -62,6 +63,7 @@ final rightColumn = Expanded(
 class LayoutScreen extends StatelessWidget {
   static String name = 'Layout';
   static String description = 'Very basic layout Row';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -86,16 +88,18 @@ class LayoutScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: Container(
-        color: Colors.black26,
-        alignment: Alignment(0.0, 0.0),
-        margin: new EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            leftColumn,
-            rightColumn,
-          ],
+      body: ScreenBodyWidget(
+        child: Container(
+          color: Colors.black26,
+          alignment: Alignment(0.0, 0.0),
+          margin: new EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              leftColumn,
+              rightColumn,
+            ],
+          ),
         ),
       ),
     );

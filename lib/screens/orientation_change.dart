@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/orientation_change_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -9,6 +10,7 @@ import 'package:flutterexploration/widgets/source_drawer.dart';
 class OrientationChangeScreen extends StatelessWidget {
   static String name = 'Orientation Change';
   static String description = 'Adjust layout when device orientation changes';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -33,20 +35,22 @@ class OrientationChangeScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: OrientationBuilder(
-        builder: (context, orientation) {
-          return GridView.count(
-            crossAxisCount: orientation == Orientation.portrait ? 3 : 5,
-            children: List.generate(100, (index) {
-              return Center(
-                child: Text(
-                  'Thing $index',
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-              );
-            }),
-          );
-        },
+      body: ScreenBodyWidget(
+        child: OrientationBuilder(
+          builder: (context, orientation) {
+            return GridView.count(
+              crossAxisCount: orientation == Orientation.portrait ? 3 : 5,
+              children: List.generate(100, (index) {
+                return Center(
+                  child: Text(
+                    'Thing $index',
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                );
+              }),
+            );
+          },
+        ),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/button_ripple_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -9,6 +10,7 @@ import 'package:flutterexploration/widgets/source_drawer.dart';
 class ButtonRippleScreen extends StatelessWidget {
   static String name = 'Button Ripple';
   static String description = 'Utilise an InkWell for ripple effects';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -33,8 +35,10 @@ class ButtonRippleScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: Container(
-        child: ButtonRippleWidget(),
+      body: ScreenBodyWidget(
+        child: Container(
+          child: ButtonRippleWidget(),
+        ),
       ),
     );
   }

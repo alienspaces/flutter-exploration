@@ -11,13 +11,15 @@ import \'dart:math\';
 
 // Application packages
 import \'package:flutterexploration/screens/animated_container_source.dart\';
-import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
+import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
 
 class AnimatedContainerScreen extends StatefulWidget {
   static String name = \'Animated Container\';
   static String description = \'Randomly adjust the properties of an AnimatedContainer\';
+  static bool hide = false;
 
   @override
   _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
@@ -52,18 +54,20 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: Container(
-        alignment: Alignment.center,
-        // Creates a container that animates its parameters implicitly.
-        child: AnimatedContainer(
-          width: _width,
-          height: _height,
-          decoration: BoxDecoration(
-            color: _color,
-            borderRadius: _borderRadius,
+      body: ScreenBodyWidget(
+        child: Container(
+          alignment: Alignment.center,
+          // Creates a container that animates its parameters implicitly.
+          child: AnimatedContainer(
+            width: _width,
+            height: _height,
+            decoration: BoxDecoration(
+              color: _color,
+              borderRadius: _borderRadius,
+            ),
+            duration: Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
           ),
-          duration: Duration(seconds: 1),
-          curve: Curves.fastOutSlowIn,
         ),
       ),
       floatingActionButton: FloatingActionButton(

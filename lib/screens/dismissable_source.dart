@@ -10,6 +10,7 @@ import \'package:flutter/material.dart\';
 
 // Application packages
 import \'package:flutterexploration/screens/dismissable_source.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
@@ -17,6 +18,7 @@ import \'package:flutterexploration/widgets/source_drawer.dart\';
 class DismissableScreen extends StatelessWidget {
   static String name = \'Dismissable List\';
   static String description = \'ListView with Dismissable items\';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -41,7 +43,9 @@ class DismissableScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: DismissibleList(),
+      body: ScreenBodyWidget(
+        child: DismissibleList(),
+      ),
     );
   }
 }

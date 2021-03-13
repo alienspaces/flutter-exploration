@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/snackbar_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -9,6 +10,7 @@ import 'package:flutterexploration/widgets/source_drawer.dart';
 class SnackBarScreen extends StatelessWidget {
   static String name = 'SnackBar';
   static String description = 'A simple SnackBar with a SnackBarAction';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -33,7 +35,9 @@ class SnackBarScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: SnackBarBodyWidget(),
+      body: ScreenBodyWidget(
+        child: SnackBarBodyWidget(),
+      ),
     );
   }
 }

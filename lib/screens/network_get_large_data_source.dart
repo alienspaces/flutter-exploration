@@ -15,6 +15,7 @@ import \'package:http/http.dart\' as http;
 
 // Application packages
 import \'package:flutterexploration/screens/network_get_large_data_source.dart\';
+import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
@@ -22,8 +23,7 @@ import \'package:flutterexploration/widgets/source_drawer.dart\';
 class NetworkGetLargeDataScreen extends StatelessWidget {
   static String name = \'Network Get Lots\';
   static String description = \'Get lots of data from a REST API\';
-
-  final String title = \'Fetch lots of data\';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -50,14 +50,16 @@ class NetworkGetLargeDataScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: FutureBuilder<List<Photo>>(
-        future: fetchPhotos(http.Client()),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) print(snapshot.error);
-          return snapshot.hasData
-              ? PhotosList(photos: snapshot.data)
-              : Center(child: CircularProgressIndicator());
-        },
+      body: ScreenBodyWidget(
+        child: FutureBuilder<List<Photo>>(
+          future: fetchPhotos(http.Client()),
+          builder: (context, snapshot) {
+            if (snapshot.hasError) print(snapshot.error);
+            return snapshot.hasData
+                ? PhotosList(photos: snapshot.data)
+                : Center(child: CircularProgressIndicator());
+          },
+        ),
       ),
     );
   }

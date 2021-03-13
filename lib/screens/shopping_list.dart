@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/shopping_list_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -9,6 +10,7 @@ import 'package:flutterexploration/widgets/source_drawer.dart';
 class ShoppingListScreen extends StatefulWidget {
   static String name = 'Shopping List';
   static String description = 'A shopping list';
+  static bool hide = false;
 
   ShoppingListScreen({Key key, this.products}) : super(key: key);
 
@@ -69,15 +71,17 @@ class _ShoppingListState extends State<ShoppingListScreen> {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 8.0),
-        children: cartProducts.map((Product product) {
-          return ShoppingListItem(
-            product: product,
-            inCart: _shoppingCart.contains(product),
-            onCartChanged: _handleCardChanged,
-          );
-        }).toList(),
+      body: ScreenBodyWidget(
+        child: ListView(
+          padding: EdgeInsets.symmetric(vertical: 8.0),
+          children: cartProducts.map((Product product) {
+            return ShoppingListItem(
+              product: product,
+              inCart: _shoppingCart.contains(product),
+              onCartChanged: _handleCardChanged,
+            );
+          }).toList(),
+        ),
       ),
     );
   }

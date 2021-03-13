@@ -3,6 +3,7 @@ import 'package:flutter/physics.dart';
 
 // Application packages
 import 'package:flutterexploration/screens/draggable_card_source.dart';
+import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
@@ -10,6 +11,7 @@ import 'package:flutterexploration/widgets/source_drawer.dart';
 class DraggableCardScreen extends StatelessWidget {
   static String name = 'Draggable';
   static String description = 'Draggable Card with GestureDetector';
+  static bool hide = false;
 
   // Key for source drawer
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -34,9 +36,11 @@ class DraggableCardScreen extends StatelessWidget {
         sourceWidget: SourceWidget(),
       ),
       // Example
-      body: DraggableCard(
-        child: FlutterLogo(
-          size: 128,
+      body: ScreenBodyWidget(
+        child: DraggableCard(
+          child: FlutterLogo(
+            size: 128,
+          ),
         ),
       ),
     );
