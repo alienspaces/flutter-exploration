@@ -148,7 +148,11 @@ class _CounterWidgetState extends State<CounterWidget> {
       alignment: Alignment.topLeft,
       color: Theme.of(context).colorScheme.background,
       child: Container(
-        height: height,
+        // Setting minimum height allows scrolling when
+        // content height is greater than the screen height
+        constraints: BoxConstraints(
+          minHeight: height,
+        ),
         color: Theme.of(context).colorScheme.secondary,
         padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
         child: HighlightView(

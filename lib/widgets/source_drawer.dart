@@ -20,15 +20,10 @@ class SourceDrawerWidget extends StatelessWidget {
     return Container(
       width: containerWidth,
       child: Drawer(
-        child: Stack(
-          alignment: AlignmentDirectional.topEnd,
-          children: <Widget>[
-            Scrollbar(
-              child: SingleChildScrollView(
-                child: sourceWidget,
-              ),
-            ),
-          ],
+        child: Scrollbar(
+          child: SingleChildScrollView(
+            child: sourceWidget,
+          ),
         ),
       ),
     );
