@@ -28,7 +28,6 @@ class SourceWidgetBuilder extends Builder {
     log.info('copyAssetId - path - ${copyAssetId.path}');
 
     var fileContent = await buildStep.readAsString(inputId);
-    log.info('copyAssetId - content length ${fileContent.length}');
 
     // Write out the new asset
     await buildStep.writeAsString(copyAssetId, getContent(fileContent));
