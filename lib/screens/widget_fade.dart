@@ -44,9 +44,9 @@ class _WidgetFadeScreenState extends State<WidgetFadeScreen> {
           OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
         ],
       ),
-      // Screen list drawer
+      // Common screen list drawer
       drawer: ScreenListDrawerWidget(),
-      // Source Code drawer
+      // Common source code drawer
       endDrawer: SourceDrawerWidget(
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),

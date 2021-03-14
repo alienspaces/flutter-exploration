@@ -26,9 +26,9 @@ class AnimatedRouteScreen extends StatelessWidget {
           OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
         ],
       ),
-      // Screen list drawer
+      // Common screen list drawer
       drawer: ScreenListDrawerWidget(),
-      // Source Code drawer
+      // Common source code drawer
       endDrawer: SourceDrawerWidget(
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),

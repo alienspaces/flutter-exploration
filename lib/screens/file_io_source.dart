@@ -3,7 +3,6 @@ import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/github.dart';
 
 class SourceWidget extends StatelessWidget {
-
   final String textContent = '''
   
 import \'dart:async\';
@@ -68,9 +67,9 @@ class _FileIOScreenState extends State<FileIOScreen> {
             OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
           ],
         ),
-        // Screen list drawer
+        // Common screen list drawer
         drawer: ScreenListDrawerWidget(),
-        // Source Code drawer
+        // Common source code drawer
         endDrawer: SourceDrawerWidget(
           scaffoldKey: _scaffoldKey,
           sourceWidget: SourceWidget(),
@@ -124,7 +123,6 @@ class CounterStorage {
 
   @override
   Widget build(BuildContext context) {
-
     // Adjust font size based on screen width
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

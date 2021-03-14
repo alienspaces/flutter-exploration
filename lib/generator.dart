@@ -1,6 +1,9 @@
 import 'package:build/build.dart';
 import 'package:logging/logging.dart';
 
+// NOTE: This builder stuff is complex limited in its capability, the documentation
+// is poor and for what we are doing here, this could simply be a dart script.
+
 Builder sourceWidgetBuilder(BuilderOptions builderOptions) => SourceWidgetBuilder(builderOptions);
 
 class SourceWidgetBuilder extends Builder {
