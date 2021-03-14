@@ -3,6 +3,7 @@ import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/github.dart';
 
 class SourceWidget extends StatelessWidget {
+
   final String textContent = '''
   
 import \'package:flutter/material.dart\';
@@ -55,6 +56,8 @@ class ButtonRippleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Theme.of(context).colorScheme.secondary,
+      // Using an inkwell is one way to create a button
       child: InkWell(
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -68,7 +71,14 @@ class ButtonRippleWidget extends StatelessWidget {
           padding: EdgeInsets.all(12.0),
           width: 400,
           height: 400,
-          child: Text(\'Flat Button\', textAlign: TextAlign.center),
+          alignment: Alignment.center,
+          child: Text(
+            \'Press\',
+            style: Theme.of(context)
+                .textTheme
+                .bodyText1
+                .copyWith(color: Theme.of(context).colorScheme.onSecondary),
+          ),
         ),
       ),
     );
@@ -79,6 +89,7 @@ class ButtonRippleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     // Adjust font size based on screen width
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

@@ -3,6 +3,7 @@ import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/github.dart';
 
 class SourceWidget extends StatelessWidget {
+
   final String textContent = '''
   
 import \'package:flutter/material.dart\';
@@ -44,53 +45,9 @@ class CounterScreen extends StatelessWidget {
       // Common screen body containing example
       body: ScreenBodyWidget(
         child: Center(
-          // Counter widget is imported from our application widgets library
           child: CounterWidget(),
         ),
       ),
-      // Common screen body containing example FloatingActionButton
-      floatingActionButton: FloatingActionButton(
-        tooltip: \'Add\',
-        child: Icon(Icons.add),
-        onPressed: null,
-      ),
-    );
-  }
-}
-
-/// CounterDisplay demonstrates a StatelessWidget that
-/// accepts the current count.
-class CounterDisplay extends StatelessWidget {
-  CounterDisplay({this.count});
-
-  final int count;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(\'Count: \$count\');
-  }
-}
-
-/// CounterIncrementer demonstrates a StatelessWidget that
-/// accepts a function callback.
-class CounterIncrementor extends StatelessWidget {
-  CounterIncrementor({this.onPressed});
-
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
-          Theme.of(context).colorScheme.secondary,
-        ),
-        shadowColor: MaterialStateProperty.all(
-          Theme.of(context).colorScheme.secondaryVariant,
-        ),
-      ),
-      onPressed: onPressed,
-      child: Text(\'Increment Count\'),
     );
   }
 }
@@ -128,10 +85,49 @@ class _CounterWidgetState extends State<CounterWidget> {
   }
 }
 
+/// CounterDisplay demonstrates a StatelessWidget that
+/// accepts the current count.
+class CounterDisplay extends StatelessWidget {
+  CounterDisplay({this.count});
+
+  final int count;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(\'Count: \$count\');
+  }
+}
+
+/// CounterIncrementer demonstrates a StatelessWidget that
+/// accepts a function callback.
+class CounterIncrementor extends StatelessWidget {
+  CounterIncrementor({this.onPressed});
+
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Theme.of(context).colorScheme.secondary,
+        minimumSize: Size.square(200),
+      ),
+      onPressed: onPressed,
+      child: Text(
+        \'Increment Count\',
+        style: Theme.of(context).textTheme.bodyText1.copyWith(
+              color: Theme.of(context).colorScheme.onSecondary,
+            ),
+      ),
+    );
+  }
+}
+
   ''';
 
   @override
   Widget build(BuildContext context) {
+
     // Adjust font size based on screen width
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

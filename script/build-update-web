@@ -5,7 +5,7 @@
 flutter channel stable
 
 # Generate source pages
-flutter pub run build_runner build
+flutter pub run build_runner build --delete-conflicting-outputs
 
 # Build the web version
 flutter build web

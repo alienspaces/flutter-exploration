@@ -3,6 +3,7 @@ import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/github.dart';
 
 class SourceWidget extends StatelessWidget {
+
   final String textContent = '''
   
 import \'package:flutter/material.dart\';
@@ -44,7 +45,16 @@ class AnimatedRouteScreen extends StatelessWidget {
       body: ScreenBodyWidget(
         child: Center(
           child: ElevatedButton(
-            child: Text(\'Go!\'),
+            style: ElevatedButton.styleFrom(
+              primary: Theme.of(context).colorScheme.secondary,
+              minimumSize: Size.square(200),
+            ),
+            child: Text(
+              \'Go!\',
+              style: Theme.of(context).textTheme.bodyText1.copyWith(
+                    color: Theme.of(context).colorScheme.onSecondary,
+                  ),
+            ),
             onPressed: () {
               Navigator.of(context).push(_createRoute());
             },
@@ -91,6 +101,7 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     // Adjust font size based on screen width
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

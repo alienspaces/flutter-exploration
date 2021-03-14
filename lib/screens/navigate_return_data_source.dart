@@ -3,6 +3,7 @@ import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/github.dart';
 
 class SourceWidget extends StatelessWidget {
+
   final String textContent = '''
   
 import \'package:flutter/material.dart\';
@@ -134,6 +135,7 @@ class SelectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     // Adjust font size based on screen width
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
