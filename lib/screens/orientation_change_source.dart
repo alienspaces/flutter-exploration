@@ -41,7 +41,7 @@ class OrientationChangeScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: OrientationBuilder(
           builder: (context, orientation) {

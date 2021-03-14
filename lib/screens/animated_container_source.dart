@@ -53,7 +53,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: Container(
           alignment: Alignment.center,

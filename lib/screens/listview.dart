@@ -34,7 +34,7 @@ class ListViewScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: Column(
           children: <Widget>[

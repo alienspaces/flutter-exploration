@@ -51,7 +51,7 @@ class _WidgetFadeScreenState extends State<WidgetFadeScreen> {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: Container(
           padding: EdgeInsets.all(50.0),

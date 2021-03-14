@@ -34,18 +34,11 @@ class CounterScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: Center(
-          // Counter widget is imported from our application widgets library
           child: CounterWidget(),
         ),
-      ),
-      // Example FloatingActionButton
-      floatingActionButton: FloatingActionButton(
-        tooltip: 'Add',
-        child: Icon(Icons.add),
-        onPressed: null,
       ),
     );
   }

@@ -77,7 +77,7 @@ class _ShoppingListState extends State<ShoppingListScreen> {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: ListView(
           padding: EdgeInsets.symmetric(vertical: 8.0),

@@ -43,7 +43,7 @@ class ListViewBuilderScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: ListView.builder(
           itemCount: items.length,

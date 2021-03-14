@@ -41,7 +41,7 @@ class NavigateReturnDataScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: Center(
           child: SelectionButton(),
@@ -98,7 +98,7 @@ class SelectionScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: Center(
           child: Column(

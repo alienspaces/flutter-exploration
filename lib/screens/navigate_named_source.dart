@@ -42,7 +42,7 @@ class NavigateNamedScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: Center(
           child: ElevatedButton(
@@ -81,7 +81,7 @@ class NavigateNamedSecondScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: Center(
         child: ElevatedButton(
           child: Text(\'Go Back!\'),

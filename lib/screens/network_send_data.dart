@@ -48,7 +48,7 @@ class _NetworkSendDataScreenState extends State<NetworkSendDataScreen> {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: Container(
           alignment: Alignment.center,

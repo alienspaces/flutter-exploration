@@ -48,7 +48,7 @@ class NetworkGetLargeDataScreen extends StatelessWidget {
         scaffoldKey: _scaffoldKey,
         sourceWidget: SourceWidget(),
       ),
-      // Example
+      // Common screen body containing example
       body: ScreenBodyWidget(
         child: FutureBuilder<List<Photo>>(
           future: fetchPhotos(http.Client()),
