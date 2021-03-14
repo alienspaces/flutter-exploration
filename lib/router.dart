@@ -3,36 +3,36 @@
 import 'package:flutter/material.dart';
 
 // Application packages
-import 'package:flutterexploration/screens/home.dart';
-import 'package:flutterexploration/screens/animated_container.dart';
-import 'package:flutterexploration/screens/animated_route.dart';
-import 'package:flutterexploration/screens/button_ripple.dart';
-import 'package:flutterexploration/screens/counter.dart';
-import 'package:flutterexploration/screens/differing_list.dart';
-import 'package:flutterexploration/screens/dismissable.dart';
-import 'package:flutterexploration/screens/draggable_card.dart';
-import 'package:flutterexploration/screens/fade_image.dart';
-import 'package:flutterexploration/screens/file_io.dart';
-import 'package:flutterexploration/screens/form_validation.dart';
-import 'package:flutterexploration/screens/gridview.dart';
-import 'package:flutterexploration/screens/keyvalue_store.dart';
-import 'package:flutterexploration/screens/layout.dart';
-import 'package:flutterexploration/screens/listview.dart';
-import 'package:flutterexploration/screens/listview_builder.dart';
-import 'package:flutterexploration/screens/navigate.dart';
-import 'package:flutterexploration/screens/navigate_arguments.dart';
-import 'package:flutterexploration/screens/navigate_named.dart';
-import 'package:flutterexploration/screens/navigate_return_data.dart';
-import 'package:flutterexploration/screens/navigate_send_data.dart';
-import 'package:flutterexploration/screens/network_get_data.dart';
-import 'package:flutterexploration/screens/network_get_large_data.dart';
-import 'package:flutterexploration/screens/network_send_data.dart';
-import 'package:flutterexploration/screens/orientation_change.dart';
-import 'package:flutterexploration/screens/shopping_list.dart';
-import 'package:flutterexploration/screens/sliverlist.dart';
-import 'package:flutterexploration/screens/snackbar.dart';
-import 'package:flutterexploration/screens/tabs.dart';
-import 'package:flutterexploration/screens/widget_fade.dart';
+import 'package:flutterexploration/screens/flutter/home.dart';
+import 'package:flutterexploration/screens/flutter/animated_container.dart';
+import 'package:flutterexploration/screens/flutter/animated_route.dart';
+import 'package:flutterexploration/screens/flutter/button_ripple.dart';
+import 'package:flutterexploration/screens/flutter/counter.dart';
+import 'package:flutterexploration/screens/flutter/differing_list.dart';
+import 'package:flutterexploration/screens/flutter/dismissable.dart';
+import 'package:flutterexploration/screens/flutter/draggable_card.dart';
+import 'package:flutterexploration/screens/flutter/fade_image.dart';
+import 'package:flutterexploration/screens/flutter/file_io.dart';
+import 'package:flutterexploration/screens/flutter/form_validation.dart';
+import 'package:flutterexploration/screens/flutter/gridview.dart';
+import 'package:flutterexploration/screens/flutter/keyvalue_store.dart';
+import 'package:flutterexploration/screens/flutter/layout.dart';
+import 'package:flutterexploration/screens/flutter/listview.dart';
+import 'package:flutterexploration/screens/flutter/listview_builder.dart';
+import 'package:flutterexploration/screens/flutter/navigate.dart';
+import 'package:flutterexploration/screens/flutter/navigate_arguments.dart';
+import 'package:flutterexploration/screens/flutter/navigate_named.dart';
+import 'package:flutterexploration/screens/flutter/navigate_return_data.dart';
+import 'package:flutterexploration/screens/flutter/navigate_send_data.dart';
+import 'package:flutterexploration/screens/flutter/network_get_data.dart';
+import 'package:flutterexploration/screens/flutter/network_get_large_data.dart';
+import 'package:flutterexploration/screens/flutter/network_send_data.dart';
+import 'package:flutterexploration/screens/flutter/orientation_change.dart';
+import 'package:flutterexploration/screens/flutter/shopping_list.dart';
+import 'package:flutterexploration/screens/flutter/sliverlist.dart';
+import 'package:flutterexploration/screens/flutter/snackbar.dart';
+import 'package:flutterexploration/screens/flutter/tabs.dart';
+import 'package:flutterexploration/screens/flutter/widget_fade.dart';
 
 /// Defines a category of route
 class RouteCategory {
@@ -254,6 +254,19 @@ List<RouteCategory> routeCategories = [
         description: WidgetFadeScreen.description,
         hide: WidgetFadeScreen.hide,
         screen: WidgetFadeScreen(),
+      ),
+    ],
+  ),
+  RouteCategory(
+    name: 'Flutter Flame',
+    description: 'Game programming with Flutter',
+    routes: [
+      RouteConfig(
+        name: HomeScreen.name,
+        description: HomeScreen.description,
+        hide: HomeScreen.hide,
+        screen: HomeScreen(),
+        isDefault: true,
       ),
     ],
   ),

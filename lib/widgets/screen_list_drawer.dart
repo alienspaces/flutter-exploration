@@ -14,19 +14,24 @@ class ScreenListDrawerWidget extends StatelessWidget {
     }
 
     // Build list of links to screens
-    List<Widget> buildScreenList() {
-      List<Widget> routeList = [];
+    Widget buildScreenList() {
+      List<Widget> categoryColumnList = [];
 
       routeCategories.forEach((routeCategory) {
+        List<Widget> routeList = [];
+
         // Add route category
         routeList.add(
           DrawerHeader(
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
-            ),
+            // decoration: BoxDecoration(
+            //   color: Theme.of(context).colorScheme.secondary,
+            // ),
+            padding: EdgeInsets.zero,
             margin: EdgeInsets.zero,
             child: Container(
               alignment: Alignment.centerLeft,
+              color: Theme.of(context).colorScheme.primary,
+              padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -95,7 +100,7 @@ class ScreenListDrawerWidget extends StatelessWidget {
                 ),
               ),
               selected: currentRoute,
-              selectedTileColor: Theme.of(context).colorScheme.secondary,
+              selectedTileColor: Theme.of(context).colorScheme.secondaryVariant,
             ),
           );
           routeList.add(
@@ -106,15 +111,39 @@ class ScreenListDrawerWidget extends StatelessWidget {
             ),
           );
         });
+
+        // Add list of routes to category column list
+        categoryColumnList.add(
+          Container(
+            width: 300,
+            color: Theme.of(context).colorScheme.secondary,
+            padding: EdgeInsets.only(left: 10),
+            child: Column(
+              children: routeList,
+            ),
+          ),
+        );
       });
 
-      return routeList;
+      return Container(
+        alignment: Alignment.topLeft,
+        color: Theme.of(context).colorScheme.secondary,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: categoryColumnList,
+        ),
+      );
     }
 
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: buildScreenList(),
+    return Container(
+      width: routeCategories.length * 300.00,
+      child: Drawer(
+        child: Scrollbar(
+          child: SingleChildScrollView(
+            child: buildScreenList(),
+          ),
+        ),
       ),
     );
   }

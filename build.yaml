@@ -4,7 +4,8 @@ targets:
       flutterexploration|sourceWidgetBuilder:
         enabled: True
         generate_for:
-          - lib/screens/*
+          - lib/screens/flutter/*
+          - lib/screens/flame/*
 
 builders:
   sourceWidgetBuilder:

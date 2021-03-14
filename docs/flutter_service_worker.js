@@ -22,10 +22,10 @@ const RESOURCES = {
 "assets/NOTICES": "e5caeb30f5d4badb19c747b032699cda",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"main.dart.js": "7a8b6fe961be365c6d544c074300ae92",
+"main.dart.js": "44372e5c56a42b46b1a55b100827ece4",
 "manifest.json": "190711d25f577894a01d6e4cc37c8249",
-"index.html": "622df409fd5870535b46ee7a7761abf6",
-"/": "622df409fd5870535b46ee7a7761abf6",
+"index.html": "33f3ff628382e082e0baff346bf71334",
+"/": "33f3ff628382e082e0baff346bf71334",
 "version.json": "cbc504d1ea811921213ee8d0c9c6e1e8"
 };
 
