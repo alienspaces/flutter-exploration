@@ -11,6 +11,9 @@ void main() {
     print('${record.level.name}: ${record.time}: ${record.message}');
   });
 
+  // Required for numerous packages
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(Application());
 }
 

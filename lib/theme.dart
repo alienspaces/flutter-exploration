@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 /// Returns the application theme data
 ThemeData getTheme(BuildContext context) {
   return ThemeData(
-    // Default font family.
-    fontFamily: 'Lato',
+    // // Default font family.
+    // fontFamily: 'Lato',
 
     // NOTE: Setting the primaryColor provides some consistency
     // across screen colours as not all Flutter components correctly

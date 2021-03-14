@@ -19,7 +19,6 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: 1.25.0-8.1.pre
 
 dependencies:
   flutter:
@@ -67,10 +66,7 @@ dependencies:
   flutter_highlight: 0.6.0
 
   # A minimalistic Flutter game engine.
-  flame:
-    git:
-      url: git://github.com/flame-engine/flame.git
-      ref: 4f4f775a885df337106d17ff514abd1e83658fef
+  flame: ^1.0.0-rc8
 
 dev_dependencies:
   flutter_test:
@@ -97,6 +93,8 @@ flutter:
   assets:
     - assets/loading.gif
     - assets/fonts/
+    - assets/images/chopper.png
+    - assets/images/creature.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
