@@ -10,7 +10,7 @@ ThemeData getTheme(BuildContext context) {
     // NOTE: Setting the primaryColor provides some consistency
     // across screen colours as not all Flutter components correctly
     // use the defined colorTheme data provided further below.
-    primaryColor: Color(0xFF9fa8da),
+    primaryColor: Color(0xFF383f51),
 
     // Default text theme.
     textTheme: GoogleFonts.latoTextTheme(
@@ -18,17 +18,17 @@ ThemeData getTheme(BuildContext context) {
     ),
     colorScheme: ColorScheme(
       brightness: Brightness.light,
-      primary: Color(0xFF9fa8da),
-      primaryVariant: Color(0xFF6f79a8),
-      onPrimary: Colors.black,
-      secondary: Color(0xFF90caf9),
-      secondaryVariant: Color(0xFF5d99c6),
-      onSecondary: Colors.black,
+      primary: Color(0xFF383f51),
+      primaryVariant: Color(0xFF1c2029),
+      onPrimary: Color(0xFFcac3c2),
+      secondary: Color(0xFF3c4f76),
+      secondaryVariant: Color(0xFF253149),
+      onSecondary: Color(0xFFe4d8d0),
       error: Colors.orange[100],
       onError: Colors.black,
       background: Color(0xFFF8F8F8),
       onBackground: Colors.black,
-      surface: Color(0xFFd1d9ff),
+      surface: Color(0xFFdcdcdc),
       onSurface: Colors.black,
     ),
   );

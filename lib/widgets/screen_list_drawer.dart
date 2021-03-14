@@ -22,7 +22,7 @@ class ScreenListDrawerWidget extends StatelessWidget {
         routeList.add(
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondaryVariant,
+              color: Theme.of(context).colorScheme.primary,
             ),
             margin: EdgeInsets.zero,
             child: Container(
@@ -34,14 +34,20 @@ class ScreenListDrawerWidget extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       '${routeCategory.name}',
-                      style: Theme.of(context).textTheme.headline5,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline5
+                          .copyWith(color: Theme.of(context).colorScheme.onPrimary),
                     ),
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       '${routeCategory.description ?? ""}',
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1
+                          .copyWith(color: Theme.of(context).colorScheme.onSecondary),
                     ),
                   ),
                 ],
@@ -61,6 +67,7 @@ class ScreenListDrawerWidget extends StatelessWidget {
 
           routeList.add(
             ListTile(
+              tileColor: Theme.of(context).colorScheme.surface,
               onTap: () => {
                 Navigator.of(context).pushReplacementNamed(routeName),
               },
@@ -68,7 +75,11 @@ class ScreenListDrawerWidget extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   '${route.name}',
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.headline6.copyWith(
+                        color: currentRoute
+                            ? Theme.of(context).colorScheme.onSecondary
+                            : Theme.of(context).colorScheme.onSurface,
+                      ),
                 ),
               ),
               subtitle: Container(
@@ -76,7 +87,11 @@ class ScreenListDrawerWidget extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   '${route.description ?? ""}',
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodyText2.copyWith(
+                        color: currentRoute
+                            ? Theme.of(context).colorScheme.onSecondary
+                            : Theme.of(context).colorScheme.onSurface,
+                      ),
                 ),
               ),
               selected: currentRoute,
@@ -87,6 +102,7 @@ class ScreenListDrawerWidget extends StatelessWidget {
             Divider(
               height: 1,
               thickness: 1,
+              color: Colors.grey[400],
             ),
           );
         });
