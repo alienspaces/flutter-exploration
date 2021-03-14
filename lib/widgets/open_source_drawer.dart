@@ -18,14 +18,22 @@ class OpenSourceDrawerWidget extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           primary: Theme.of(context).colorScheme.secondary,
-          //   minimumSize: Size.fromHeight(30),
         ),
         onPressed: _openEndDrawer,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Icon(Icons.code),
-            Text('Code'),
+            Icon(
+              Icons.code,
+              color: Theme.of(context).colorScheme.onSecondary,
+            ),
+            Text(
+              'Code',
+              style: Theme.of(context)
+                  .textTheme
+                  .button
+                  .copyWith(color: Theme.of(context).colorScheme.onSecondary),
+            ),
           ],
         ),
       ),

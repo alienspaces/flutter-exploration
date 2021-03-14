@@ -37,7 +37,16 @@ class AnimatedRouteScreen extends StatelessWidget {
       body: ScreenBodyWidget(
         child: Center(
           child: ElevatedButton(
-            child: Text('Go!'),
+            style: ElevatedButton.styleFrom(
+              primary: Theme.of(context).colorScheme.secondary,
+              minimumSize: Size.square(200),
+            ),
+            child: Text(
+              'Go!',
+              style: Theme.of(context).textTheme.bodyText1.copyWith(
+                    color: Theme.of(context).colorScheme.onSecondary,
+                  ),
+            ),
             onPressed: () {
               Navigator.of(context).push(_createRoute());
             },

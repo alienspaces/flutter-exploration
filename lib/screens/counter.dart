@@ -44,43 +44,6 @@ class CounterScreen extends StatelessWidget {
   }
 }
 
-/// CounterDisplay demonstrates a StatelessWidget that
-/// accepts the current count.
-class CounterDisplay extends StatelessWidget {
-  CounterDisplay({this.count});
-
-  final int count;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('Count: $count');
-  }
-}
-
-/// CounterIncrementer demonstrates a StatelessWidget that
-/// accepts a function callback.
-class CounterIncrementor extends StatelessWidget {
-  CounterIncrementor({this.onPressed});
-
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
-          Theme.of(context).colorScheme.secondary,
-        ),
-        shadowColor: MaterialStateProperty.all(
-          Theme.of(context).colorScheme.secondaryVariant,
-        ),
-      ),
-      onPressed: onPressed,
-      child: Text('Increment Count'),
-    );
-  }
-}
-
 /// Counter demonstrates a StatefulWidget that passes
 /// its state to child widgets.
 class CounterWidget extends StatefulWidget {
@@ -109,6 +72,44 @@ class _CounterWidgetState extends State<CounterWidget> {
           // Current count is passed to child widget
           CounterDisplay(count: _counter),
         ],
+      ),
+    );
+  }
+}
+
+/// CounterDisplay demonstrates a StatelessWidget that
+/// accepts the current count.
+class CounterDisplay extends StatelessWidget {
+  CounterDisplay({this.count});
+
+  final int count;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Count: $count');
+  }
+}
+
+/// CounterIncrementer demonstrates a StatelessWidget that
+/// accepts a function callback.
+class CounterIncrementor extends StatelessWidget {
+  CounterIncrementor({this.onPressed});
+
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Theme.of(context).colorScheme.secondary,
+        minimumSize: Size.square(200),
+      ),
+      onPressed: onPressed,
+      child: Text(
+        'Increment Count',
+        style: Theme.of(context).textTheme.bodyText1.copyWith(
+              color: Theme.of(context).colorScheme.onSecondary,
+            ),
       ),
     );
   }
