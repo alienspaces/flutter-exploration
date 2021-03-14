@@ -9,15 +9,15 @@ class SourceWidget extends StatelessWidget {
 import \'package:flutter/material.dart\';
 
 // Application packages
-import \'package:flutterexploration/screens/flutter/home_source.dart\';
+import \'package:flutterexploration/screens/flame/home_source.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
 
 ///
-class FlutterHomeScreen extends StatelessWidget {
-  static String name = \'Flutter Home Screen\';
+class FlameHomeScreen extends StatelessWidget {
+  static String name = \'Flame Home Screen\';
   static String description = \'\';
   static bool hide = false;
 
@@ -30,7 +30,7 @@ class FlutterHomeScreen extends StatelessWidget {
       key: _scaffoldKey,
       // Common application bar
       appBar: AppBar(
-        title: Text(FlutterHomeScreen.name),
+        title: Text(FlameHomeScreen.name),
         actions: <Widget>[
           // Open source code
           OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),

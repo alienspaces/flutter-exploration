@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 
 // Application packages
+
+// Flutter screens
 import 'package:flutterexploration/screens/flutter/home.dart';
 import 'package:flutterexploration/screens/flutter/animated_container.dart';
 import 'package:flutterexploration/screens/flutter/animated_route.dart';
@@ -33,6 +35,9 @@ import 'package:flutterexploration/screens/flutter/sliverlist.dart';
 import 'package:flutterexploration/screens/flutter/snackbar.dart';
 import 'package:flutterexploration/screens/flutter/tabs.dart';
 import 'package:flutterexploration/screens/flutter/widget_fade.dart';
+
+// Flame screens
+import 'package:flutterexploration/screens/flame/home.dart';
 
 /// Defines a category of route
 class RouteCategory {
@@ -69,10 +74,10 @@ List<RouteCategory> routeCategories = [
     description: 'Examples using standard Flutter widgets',
     routes: [
       RouteConfig(
-        name: HomeScreen.name,
-        description: HomeScreen.description,
-        hide: HomeScreen.hide,
-        screen: HomeScreen(),
+        name: FlutterHomeScreen.name,
+        description: FlutterHomeScreen.description,
+        hide: FlutterHomeScreen.hide,
+        screen: FlutterHomeScreen(),
         isDefault: true,
       ),
       RouteConfig(
@@ -262,10 +267,10 @@ List<RouteCategory> routeCategories = [
     description: 'Game programming with Flutter',
     routes: [
       RouteConfig(
-        name: HomeScreen.name,
-        description: HomeScreen.description,
-        hide: HomeScreen.hide,
-        screen: HomeScreen(),
+        name: FlameHomeScreen.name,
+        description: FlameHomeScreen.description,
+        hide: FlameHomeScreen.hide,
+        screen: FlameHomeScreen(),
         isDefault: true,
       ),
     ],
