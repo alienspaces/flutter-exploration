@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Generate source pages
+flutter pub run build_runner build --delete-conflicting-outputs

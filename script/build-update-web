@@ -4,8 +4,9 @@
 # updates the `docs` directory with the result.
 flutter channel stable
 
-# Generate source pages
-flutter pub run build_runner build --delete-conflicting-outputs
+# Generate source screens
+# flutter pub run build_runner build --delete-conflicting-outputs
+source ${BASH_SOURCE%/*}/generate-source-screens
 
 # Build the web version
 flutter build web

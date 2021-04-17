@@ -58,35 +58,50 @@ class _AnimatedContainerAppState extends State<AnimatedContainerScreen> {
         child: Container(
           alignment: Alignment.center,
           // Creates a container that animates its parameters implicitly.
-          child: AnimatedContainer(
-            width: _width,
-            height: _height,
-            decoration: BoxDecoration(
-              color: _color,
-              borderRadius: _borderRadius,
-            ),
-            duration: Duration(seconds: 1),
-            curve: Curves.fastOutSlowIn,
+          child: Column(
+            children: <Widget>[
+              Container(
+                // Maximum height and width for inner animated container
+                width: 320,
+                height: 320,
+                alignment: Alignment.center,
+                child: AnimatedContainer(
+                  width: _width,
+                  height: _height,
+                  decoration: BoxDecoration(
+                    color: _color,
+                    borderRadius: _borderRadius,
+                  ),
+                  duration: Duration(seconds: 1),
+                  curve: Curves.fastOutSlowIn,
+                ),
+              ),
+              Container(
+                width: 140,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Notify the framework that the internal state of this object has changed.
+                    setState(() {
+                      // Set random width, height, colour and border radius
+                      final r = new Random();
+                      _width = r.nextInt(300).toDouble();
+                      _height = r.nextInt(300).toDouble();
+                      _color = Color.fromRGBO(
+                        r.nextInt(256),
+                        r.nextInt(256),
+                        r.nextInt(256),
+                        1,
+                      );
+                      _borderRadius = BorderRadius.circular(r.nextInt(100).toDouble());
+                    });
+                  },
+                  child: Icon(Icons.play_arrow),
+                ),
+              ),
+            ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.play_arrow),
-        onPressed: () {
-          setState(() {
-            // Set random width, height, colour and border radius
-            final r = new Random();
-            _width = r.nextInt(300).toDouble();
-            _height = r.nextInt(300).toDouble();
-            _color = Color.fromRGBO(
-              r.nextInt(256),
-              r.nextInt(256),
-              r.nextInt(256),
-              1,
-            );
-            _borderRadius = BorderRadius.circular(r.nextInt(100).toDouble());
-          });
-        },
       ),
     );
   }
