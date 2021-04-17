@@ -47,15 +47,20 @@ class AnimatedRouteScreen extends StatelessWidget {
           color: Theme.of(context).colorScheme.surface,
           child: Column(
             children: <Widget>[
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.all(20),
+                child: Text(\'First Page\', style: Theme.of(context).textTheme.headline4),
+              ),
               // Scroll vertically
               Container(
-                margin: EdgeInsets.all(20),
                 child: Row(
                   // Space buttons evenly in horizontal space
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     // Animated from page bottom
                     Container(
+                      margin: EdgeInsets.all(20),
                       width: 140,
                       height: 50,
                       child: ElevatedButton(
@@ -76,6 +81,7 @@ class AnimatedRouteScreen extends StatelessWidget {
                     ),
                     // Animated from page top
                     Container(
+                      margin: EdgeInsets.all(20),
                       width: 140,
                       height: 50,
                       child: ElevatedButton(
@@ -99,13 +105,13 @@ class AnimatedRouteScreen extends StatelessWidget {
               ),
               // Scroll horizontally
               Container(
-                margin: EdgeInsets.all(20),
                 child: Row(
                   // Space buttons evenly in horizontal space
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     // Animated from page left
                     Container(
+                      margin: EdgeInsets.all(20),
                       width: 140,
                       height: 50,
                       child: ElevatedButton(
@@ -126,6 +132,7 @@ class AnimatedRouteScreen extends StatelessWidget {
                     ),
                     // Animated from page right
                     Container(
+                      margin: EdgeInsets.all(20),
                       width: 140,
                       height: 50,
                       child: ElevatedButton(
@@ -252,6 +259,7 @@ class SecondPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        color: Theme.of(context).colorScheme.surface,
         child: Column(
           children: <Widget>[
             Container(

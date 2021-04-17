@@ -16,8 +16,8 @@ import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
 
 class ButtonRippleScreen extends StatelessWidget {
-  static String name = \'Button Ripple\';
-  static String description = \'Utilise an InkWell for ripple effects\';
+  static String name = \'Buttons\';
+  static String description = \'Various button implementations\';
   static bool hide = false;
 
   // Key for source drawer

@@ -19,7 +19,7 @@ A collection of Flutter screens for purposes of learning and experimenting with 
 
 Install Flutter manually by [cloning the git repository](https://flutter.dev/docs/get-started/install/linux) so the Flutter version can be set specifically.
 
-Flutter `stable` channel version `2.0.1`.
+Flutter `stable` channel version `2.0.5`.
 
 ```sh
 flutter channel stable
@@ -27,7 +27,7 @@ flutter channel stable
 
 ## Flutter Sources
 
-Examples have been manually replicated and modified from the following sources:
+Many examples have been manually reproduced and then further enhanced from the following sources:
 
 * [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 * [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
