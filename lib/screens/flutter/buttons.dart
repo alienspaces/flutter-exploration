@@ -7,7 +7,7 @@ import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
 
-class ButtonRippleScreen extends StatelessWidget {
+class ButtonsScreen extends StatelessWidget {
   static String name = 'Buttons';
   static String description = 'Various Button implementations within a GridView';
   static bool hide = false;
@@ -21,7 +21,7 @@ class ButtonRippleScreen extends StatelessWidget {
       key: _scaffoldKey,
       // Common application bar
       appBar: AppBar(
-        title: Text(ButtonRippleScreen.name),
+        title: Text(ButtonsScreen.name),
         actions: <Widget>[
           // Open source code
           OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
@@ -44,11 +44,11 @@ class ButtonRippleScreen extends StatelessWidget {
   }
 }
 
-class ButtonContainerWidget extends StatelessWidget {
+class ContainingWidget extends StatelessWidget {
   final Widget buttonWidget;
   final String buttonDescription;
 
-  ButtonContainerWidget({Key key, this.buttonWidget, this.buttonDescription}) : super(key: key);
+  ContainingWidget({Key key, this.buttonWidget, this.buttonDescription}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +90,7 @@ class ButtonsWidget extends StatelessWidget {
       crossAxisSpacing: 0,
       children: <Widget>[
         // Inkwell wrapped in Material
-        ButtonContainerWidget(
+        ContainingWidget(
           buttonWidget: Material(
             color: Theme.of(context).colorScheme.secondary,
             child: InkWell(
@@ -112,7 +112,7 @@ class ButtonsWidget extends StatelessWidget {
         ),
 
         // ElevatedButton
-        ButtonContainerWidget(
+        ContainingWidget(
           buttonWidget: ElevatedButton(
             onPressed: _handleButtonClick,
             child: Container(
@@ -129,8 +129,9 @@ class ButtonsWidget extends StatelessWidget {
           ),
           buttonDescription: 'ElevatedButton',
         ),
+
         // TextButton
-        ButtonContainerWidget(
+        ContainingWidget(
           buttonWidget: TextButton(
             onPressed: _handleButtonClick,
             child: Container(

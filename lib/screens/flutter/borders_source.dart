@@ -9,15 +9,15 @@ class SourceWidget extends StatelessWidget {
 import \'package:flutter/material.dart\';
 
 // Application packages
-import \'package:flutterexploration/screens/flutter/buttons_source.dart\';
+import \'package:flutterexploration/screens/flutter/borders_source.dart\';
 import \'package:flutterexploration/widgets/screen_body.dart\';
 import \'package:flutterexploration/widgets/screen_list_drawer.dart\';
 import \'package:flutterexploration/widgets/open_source_drawer.dart\';
 import \'package:flutterexploration/widgets/source_drawer.dart\';
 
-class ButtonsScreen extends StatelessWidget {
-  static String name = \'Buttons\';
-  static String description = \'Various Button implementations within a GridView\';
+class BordersScreen extends StatelessWidget {
+  static String name = \'Borders\';
+  static String description = \'Various Border implementations\';
   static bool hide = false;
 
   // Key for source drawer
@@ -29,7 +29,7 @@ class ButtonsScreen extends StatelessWidget {
       key: _scaffoldKey,
       // Common application bar
       appBar: AppBar(
-        title: Text(ButtonsScreen.name),
+        title: Text(BordersScreen.name),
         actions: <Widget>[
           // Open source code
           OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
@@ -45,7 +45,7 @@ class ButtonsScreen extends StatelessWidget {
       // Common screen body containing example
       body: ScreenBodyWidget(
         child: Container(
-          child: ButtonsWidget(),
+          child: BordersWidget(),
         ),
       ),
     );
@@ -53,26 +53,29 @@ class ButtonsScreen extends StatelessWidget {
 }
 
 class ContainingWidget extends StatelessWidget {
-  final Widget buttonWidget;
-  final String buttonDescription;
+  final Widget containerWidget;
+  final String containerDescription;
 
-  ContainingWidget({Key key, this.buttonWidget, this.buttonDescription}) : super(key: key);
+  ContainingWidget({this.containerWidget, this.containerDescription});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).colorScheme.surface,
+      color: Theme.of(context).colorScheme.background,
       margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+      padding: EdgeInsets.only(top: 20, bottom: 20),
+      alignment: Alignment.center,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            child: buttonWidget,
+            height: 200,
+            width: 200,
+            color: Theme.of(context).colorScheme.surface,
+            child: containerWidget,
           ),
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-            child: Text(buttonDescription),
+            child: Text(containerDescription),
           ),
         ],
       ),
@@ -80,81 +83,91 @@ class ContainingWidget extends StatelessWidget {
   }
 }
 
-class ButtonsWidget extends StatelessWidget {
+class BordersWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    void _handleButtonClick() {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(\'Tapper tapper\'),
-          duration: Duration(milliseconds: 500),
-        ),
-      );
-    }
-
     return GridView.count(
       crossAxisCount: 3,
       mainAxisSpacing: 0,
       crossAxisSpacing: 0,
       children: <Widget>[
-        // Inkwell wrapped in Material
+        // Uniform Border
         ContainingWidget(
-          buttonWidget: Material(
-            color: Theme.of(context).colorScheme.secondary,
-            child: InkWell(
-              onTap: _handleButtonClick,
-              child: Container(
-                padding: EdgeInsets.all(12.0),
-                alignment: Alignment.center,
-                child: Text(
-                  \'Press\',
-                  style: Theme.of(context)
-                      .textTheme
-                      .button
-                      .copyWith(color: Theme.of(context).colorScheme.onSecondary),
+          containerWidget: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Theme.of(context).colorScheme.secondaryVariant,
+                width: 2,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+            ),
+          ),
+          containerDescription: \'Uniform border all sides\',
+        ),
+        // Mismatched border widths
+        ContainingWidget(
+          containerWidget: Container(
+            decoration: BoxDecoration(
+              border: Border(
+                left: BorderSide(
+                  width: 1,
+                  style: BorderStyle.solid,
+                ),
+                top: BorderSide(
+                  width: 2,
+                ),
+                right: BorderSide(
+                  width: 4,
+                ),
+                bottom: BorderSide(
+                  width: 8,
                 ),
               ),
             ),
           ),
-          buttonDescription: \'Inkwell wrapped in Material\',
+          containerDescription:
+              \'Mismatched border widths. Cannot implement border radius with mismatched border widths.\',
         ),
-
-        // ElevatedButton
+        // Mismatched border colors
         ContainingWidget(
-          buttonWidget: ElevatedButton(
-            onPressed: _handleButtonClick,
-            child: Container(
-              padding: EdgeInsets.all(12.0),
-              alignment: Alignment.center,
-              child: Text(
-                \'Press\',
-                style: Theme.of(context)
-                    .textTheme
-                    .button
-                    .copyWith(color: Theme.of(context).colorScheme.onSecondary),
+          containerWidget: Container(
+            decoration: BoxDecoration(
+              border: Border(
+                left: BorderSide(
+                  color: Colors.blue[400],
+                  width: 3,
+                  style: BorderStyle.solid,
+                ),
+                top: BorderSide(
+                  color: Colors.green[400],
+                  width: 3,
+                ),
+                right: BorderSide(
+                  color: Colors.yellow[400],
+                  width: 3,
+                ),
+                bottom: BorderSide(
+                  color: Colors.red[400],
+                  width: 3,
+                ),
               ),
             ),
           ),
-          buttonDescription: \'ElevatedButton\',
+          containerDescription:
+              \'Mismatched border colours. Cannot implement border radius with mismatched border colours.\',
         ),
-
-        // TextButton
+        // Top left and top right rounded borders only
         ContainingWidget(
-          buttonWidget: TextButton(
-            onPressed: _handleButtonClick,
-            child: Container(
-              padding: EdgeInsets.all(12.0),
-              alignment: Alignment.center,
-              child: Text(
-                \'Press\',
-                style: Theme.of(context)
-                    .textTheme
-                    .button
-                    .copyWith(color: Theme.of(context).colorScheme.onSurface),
+          containerWidget: Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.secondary,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
               ),
             ),
           ),
-          buttonDescription: \'TextButton\',
+          containerDescription: \'Top left and top right rounded borders only.\',
         ),
       ],
     );

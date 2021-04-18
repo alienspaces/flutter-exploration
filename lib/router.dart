@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterexploration/screens/flutter/home.dart';
 import 'package:flutterexploration/screens/flutter/animated_container.dart';
 import 'package:flutterexploration/screens/flutter/animated_route.dart';
+import 'package:flutterexploration/screens/flutter/borders.dart';
 import 'package:flutterexploration/screens/flutter/buttons.dart';
 import 'package:flutterexploration/screens/flutter/counter.dart';
 import 'package:flutterexploration/screens/flutter/dismissable.dart';
@@ -93,10 +94,16 @@ List<RouteCategory> routeCategories = [
         screen: AnimatedRouteScreen(),
       ),
       RouteConfig(
-        name: ButtonRippleScreen.name,
-        description: ButtonRippleScreen.description,
-        hide: ButtonRippleScreen.hide,
-        screen: ButtonRippleScreen(),
+        name: BordersScreen.name,
+        description: BordersScreen.description,
+        hide: BordersScreen.hide,
+        screen: BordersScreen(),
+      ),
+      RouteConfig(
+        name: ButtonsScreen.name,
+        description: ButtonsScreen.description,
+        hide: ButtonsScreen.hide,
+        screen: ButtonsScreen(),
       ),
       RouteConfig(
         name: CounterScreen.name,
