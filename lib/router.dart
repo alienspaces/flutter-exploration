@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterexploration/screens/flutter/home.dart';
 import 'package:flutterexploration/screens/flutter/animated_container.dart';
 import 'package:flutterexploration/screens/flutter/animated_route.dart';
-import 'package:flutterexploration/screens/flutter/button_ripple.dart';
+import 'package:flutterexploration/screens/flutter/buttons.dart';
 import 'package:flutterexploration/screens/flutter/counter.dart';
 import 'package:flutterexploration/screens/flutter/differing_list.dart';
 import 'package:flutterexploration/screens/flutter/dismissable.dart';
