@@ -56,7 +56,13 @@ class _CounterWidgetState extends State<CounterWidget> {
 
   void _increment() {
     setState(() {
-      ++_counter;
+      _counter++;
+    });
+  }
+
+  void _decrement() {
+    setState(() {
+      _counter--;
     });
   }
 
@@ -65,20 +71,21 @@ class _CounterWidgetState extends State<CounterWidget> {
     return Container(
       alignment: Alignment.center,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          // Callback function that increments the count is passed to child widget
-          CounterIncrementor(onPressed: _increment),
+          // Callback function that increments the count
+          CounterIncrement(onPressed: _increment),
           // Current count is passed to child widget
           CounterDisplay(count: _counter),
+          // Callback function that decrements the count
+          CounterDecrement(onPressed: _decrement),
         ],
       ),
     );
   }
 }
 
-/// CounterDisplay demonstrates a StatelessWidget that
-/// accepts the current count.
+/// CounterDisplay is a StatelessWidget that accepts the current count.
 class CounterDisplay extends StatelessWidget {
   CounterDisplay({this.count});
 
@@ -86,14 +93,23 @@ class CounterDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Count: $count');
+    return Container(
+      margin: EdgeInsets.only(left: 20, right: 20),
+      width: 190,
+      height: 190,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        border: Border.all(color: Theme.of(context).colorScheme.secondaryVariant),
+        borderRadius: BorderRadius.all(Radius.circular(4)),
+      ),
+      child: Text('Count: $count'),
+    );
   }
 }
 
-/// CounterIncrementer demonstrates a StatelessWidget that
-/// accepts a function callback.
-class CounterIncrementor extends StatelessWidget {
-  CounterIncrementor({this.onPressed});
+/// CounterIncrement is a StatelessWidget that accepts a function callback.
+class CounterIncrement extends StatelessWidget {
+  CounterIncrement({this.onPressed});
 
   final VoidCallback onPressed;
 
@@ -107,7 +123,31 @@ class CounterIncrementor extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         'Increment Count',
-        style: Theme.of(context).textTheme.bodyText1.copyWith(
+        style: Theme.of(context).textTheme.headline6.copyWith(
+              color: Theme.of(context).colorScheme.onSecondary,
+            ),
+      ),
+    );
+  }
+}
+
+/// CounterDecrement is a StatelessWidget that accepts a function callback.
+class CounterDecrement extends StatelessWidget {
+  CounterDecrement({this.onPressed});
+
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Theme.of(context).colorScheme.secondary,
+        minimumSize: Size.square(200),
+      ),
+      onPressed: onPressed,
+      child: Text(
+        'Decrement Count',
+        style: Theme.of(context).textTheme.headline6.copyWith(
               color: Theme.of(context).colorScheme.onSecondary,
             ),
       ),
