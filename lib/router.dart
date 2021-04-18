@@ -10,7 +10,6 @@ import 'package:flutterexploration/screens/flutter/animated_container.dart';
 import 'package:flutterexploration/screens/flutter/animated_route.dart';
 import 'package:flutterexploration/screens/flutter/buttons.dart';
 import 'package:flutterexploration/screens/flutter/counter.dart';
-import 'package:flutterexploration/screens/flutter/differing_list.dart';
 import 'package:flutterexploration/screens/flutter/dismissable.dart';
 import 'package:flutterexploration/screens/flutter/draggable_card.dart';
 import 'package:flutterexploration/screens/flutter/fade_image.dart';
@@ -104,12 +103,6 @@ List<RouteCategory> routeCategories = [
         description: CounterScreen.description,
         hide: CounterScreen.hide,
         screen: CounterScreen(),
-      ),
-      RouteConfig(
-        name: DifferingListScreen.name,
-        description: DifferingListScreen.description,
-        hide: DifferingListScreen.hide,
-        screen: DifferingListScreen(),
       ),
       RouteConfig(
         name: DismissableScreen.name,
