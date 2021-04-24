@@ -46,10 +46,29 @@ class FlameAnimationScreen extends StatelessWidget {
       // Common screen body containing example
       body: ScreenBodyWidget(
         child: Container(
-          /// A StatefulWidget that is in charge of attaching a Game
-          /// instance into the flutter tree
-          child: GameWidget(
-            game: ExampleGame(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              // Description
+              Container(
+                height: 50,
+                margin: EdgeInsets.only(top: 30, bottom: 30),
+                alignment: Alignment.center,
+                child: Text(
+                  'Click the screen to create a swimming fish catcher.',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              // Game
+              Expanded(
+                // A StatefulWidget that is in charge of attaching a Game
+                // instance into the flutter tree
+                child: GameWidget(
+                  game: ExampleGame(),
+                ),
+              ),
+            ],
           ),
         ),
       ),

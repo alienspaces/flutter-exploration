@@ -68,14 +68,16 @@ class ContainingWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            height: 200,
-            width: 200,
+            constraints: BoxConstraints(
+              minWidth: 100,
+              minHeight: 140,
+            ),
             color: Theme.of(context).colorScheme.surface,
             child: containerWidget,
           ),
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-            child: Text(containerDescription),
+            child: Text(containerDescription, overflow: TextOverflow.fade),
           ),
         ],
       ),
@@ -168,6 +170,32 @@ class BordersWidget extends StatelessWidget {
             ),
           ),
           containerDescription: \'Top left and top right rounded borders only.\',
+        ),
+        // Bottom left and bottom right rounded borders only
+        ContainingWidget(
+          containerWidget: Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.secondaryVariant,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(40),
+                bottomRight: Radius.circular(40),
+              ),
+            ),
+          ),
+          containerDescription: \'Bottom left and bottom right rounded borders only.\',
+        ),
+        // Top right and bottom right rounded borders only
+        ContainingWidget(
+          containerWidget: Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.secondary,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(60),
+                bottomRight: Radius.circular(60),
+              ),
+            ),
+          ),
+          containerDescription: \'Top right and bottom right rounded borders only.\',
         ),
       ],
     );

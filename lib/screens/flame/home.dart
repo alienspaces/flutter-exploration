@@ -44,6 +44,7 @@ class FlameHomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              // Description
               Container(
                 height: 50,
                 margin: EdgeInsets.only(top: 30, bottom: 30),
@@ -53,9 +54,10 @@ class FlameHomeScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
+              // Game
               Expanded(
-                /// A StatefulWidget that is in charge of attaching a Game
-                /// instance into the flutter tree
+                // A StatefulWidget that is in charge of attaching a Game
+                // instance into the flutter tree
                 child: GameWidget(
                   game: ExampleGame(),
                 ),
