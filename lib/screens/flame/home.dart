@@ -1,3 +1,5 @@
+import 'package:flame/components.dart';
+import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 // Application packages
@@ -43,11 +45,19 @@ class FlameHomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(top: 30),
+                height: 50,
+                margin: EdgeInsets.only(top: 30, bottom: 30),
                 alignment: Alignment.center,
                 child: Text(
                   'Use this screen as a template when creating new demonstration screens.',
                   textAlign: TextAlign.center,
+                ),
+              ),
+              Expanded(
+                /// A StatefulWidget that is in charge of attaching a Game
+                /// instance into the flutter tree
+                child: GameWidget(
+                  game: ExampleGame(),
                 ),
               ),
             ],
@@ -55,5 +65,21 @@ class FlameHomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class ExampleGame extends BaseGame {
+  @override
+  Future<void> onLoad() async {
+    final image = await images.load('examples/animation/chopper.png');
+    final jsonData = await assets.readJson('images/examples/animation/chopper.json');
+    final animation = SpriteAnimation.fromAsepriteData(image, jsonData);
+    final spriteSize = Vector2.all(200);
+    final animationComponent = SpriteAnimationComponent(
+      animation: animation,
+      position: (size - spriteSize) / 2,
+      size: spriteSize,
+    );
+    add(animationComponent);
   }
 }

@@ -54,6 +54,8 @@ class FlameAnimationScreen extends StatelessWidget {
       // Common screen body containing example
       body: ScreenBodyWidget(
         child: Container(
+          /// A StatefulWidget that is in charge of attaching a Game
+          /// instance into the flutter tree
           child: GameWidget(
             game: ExampleGame(),
           ),
@@ -71,9 +73,8 @@ class ExampleGame extends BaseGame with TapDetector {
 
   @override
   Future<void> onLoad() async {
-    // \'assets/images/examples/animation/chopper.png\'
-    chopper = await images.load(\'chopper.png\');
-    creature = await images.load(\'creature.png\');
+    chopper = await images.load(\'examples/animation/chopper.png\');
+    creature = await images.load(\'examples/animation/creature.png\');
 
     animation = SpriteAnimation.fromFrameData(
       chopper,
