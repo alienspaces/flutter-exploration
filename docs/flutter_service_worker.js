@@ -10,6 +10,8 @@ const RESOURCES = {
 "assets/assets/images/examples/animation/chopper.json": "983f0e1511ab0bd4c8f7bf93334a2914",
 "assets/assets/images/examples/animation/creature.png": "5e52950ac303c1b529e9005317459665",
 "assets/assets/images/examples/animation/chopper.png": "530485b0033f6debb146c0f2714126bb",
+"assets/assets/images/examples/collision/whizzie-smash.png": "cdb301009e7700ba87b3873a8a9958fb",
+"assets/assets/images/examples/collision/whizzie-fly.png": "52aeb453c05c5345402b059b15160037",
 "assets/assets/images/loading.gif": "0c6701a695f275e8af1c69cb38e98b4b",
 "assets/assets/fonts/Lato-Regular.ttf": "2d36b1a925432bae7f3c53a340868c6e",
 "assets/assets/fonts/Lato-BlackItalic.ttf": "2e26a9163cb4974dcba1bea5107d4492",
@@ -21,14 +23,14 @@ const RESOURCES = {
 "assets/assets/fonts/Lato-Bold.ttf": "85d339d916479f729938d2911b85bf1f",
 "assets/assets/fonts/Lato-Italic.ttf": "7582e823ef0d702969ea0cce9afb326d",
 "assets/assets/fonts/Lato-Thin.ttf": "9a77fbaa85fa42b73e3b96399daf49c5",
-"assets/AssetManifest.json": "d42ba00c4c796eb414e98e03a5e0fc08",
+"assets/AssetManifest.json": "9c8dcb9559eebb2f486b7bbab420db47",
 "assets/NOTICES": "e5caeb30f5d4badb19c747b032699cda",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"main.dart.js": "262827a4efc8c892542bd692f621d13d",
+"main.dart.js": "b043101bf36ad2a30cfb0176da315b44",
 "manifest.json": "190711d25f577894a01d6e4cc37c8249",
-"index.html": "a8b8c007e3fe101eb83af45868cc0219",
-"/": "a8b8c007e3fe101eb83af45868cc0219",
+"index.html": "ad30e9491b860e481d54220c11dc5167",
+"/": "ad30e9491b860e481d54220c11dc5167",
 "version.json": "cbc504d1ea811921213ee8d0c9c6e1e8"
 };
 
