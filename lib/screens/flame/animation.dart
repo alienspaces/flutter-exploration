@@ -1,9 +1,9 @@
+import 'dart:ui';
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/gestures.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart' hide Image;
-import 'dart:ui';
 
 // Application packages
 import 'package:flutterexploration/screens/flame/animation_source.dart';

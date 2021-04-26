@@ -96,6 +96,8 @@ flutter:
     - assets/images/examples/animation/chopper.png
     - assets/images/examples/animation/chopper.json
     - assets/images/examples/animation/creature.png
+    - assets/images/examples/collision/whizzie-fly.png
+    - assets/images/examples/collision/whizzie-smash.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
