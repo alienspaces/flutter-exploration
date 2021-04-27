@@ -6,9 +6,9 @@ import 'package:flutterexploration/theme.dart';
 import 'package:flutterexploration/router.dart';
 
 void main() {
-  Logger.root.level = Level.ALL; // defaults to Level.INFO
+  Logger.root.level = Level.INFO; // defaults to Level.INFO
   Logger.root.onRecord.listen((record) {
-    print('${record.level.name}: ${record.time}: ${record.message}');
+    print('${record.level.name}: ${record.time}: ${record.loggerName} - ${record.message}');
   });
 
   // Required for numerous packages

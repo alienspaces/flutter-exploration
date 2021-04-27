@@ -4,6 +4,7 @@ import 'package:flame/extensions.dart';
 import 'package:flame/game.dart';
 import 'package:flame/geometry.dart';
 import 'package:flame/gestures.dart';
+import 'package:logging/logging.dart';
 import 'package:flutter/material.dart' hide Image, Draggable;
 
 // Application packages
@@ -130,8 +131,16 @@ class CollidableComponent extends PositionComponent
 
   @override
   Future<void> onLoad() async {
+    final log = Logger('onLoad');
     final center = gameRef.size / 2;
+    log.info('Center is >$center<');
+    log.info('Position is >$position<');
+    log.info('Center minus Position is >${center - position}<');
+
     velocity = (center - position)..scaleTo(150);
+    debugColor = Colors.black;
+
+    log.info('Velocity is >$velocity<');
 
     // Begin with fly animation
     currentAnimation = flyAnimationComponent;
@@ -140,14 +149,20 @@ class CollidableComponent extends PositionComponent
 
   @override
   void update(double dt) {
+    final log = Logger('update');
     super.update(dt);
     if (_isWallHit) {
       remove();
       return;
     }
-    debugColor = Colors.black;
+    if (_isCollision) {
+      removeChild(currentAnimation);
+      currentAnimation = smashAnimationComponent;
+      addChild(currentAnimation);
+    }
+    log.fine('Velocity >$velocity< * dt >$dt< >${velocity * dt}<');
     position.add(velocity * dt);
-    _isCollision = false;
+    log.fine('Position >$position<');
   }
 
   @override
@@ -163,9 +178,6 @@ class CollidableComponent extends PositionComponent
       return;
     }
     _isCollision = true;
-    removeChild(currentAnimation);
-    currentAnimation = smashAnimationComponent;
-    addChild(currentAnimation);
   }
 }
 
