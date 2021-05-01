@@ -10,7 +10,7 @@ import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
 
-///
+/// Screen Boilerplate
 class FlameHomeScreen extends StatelessWidget {
   static String name = 'Flame Home Screen';
   static String description = '';
@@ -76,10 +76,12 @@ enum Direction { left, right }
 class ExampleGame extends BaseGame {
   SpriteAnimationComponent animationComponent;
   Direction direction = Direction.left;
+  bool turning = false;
 
   @override
   Future<void> onLoad() async {
     final log = Logger('onLoad');
+    log.info('Loading');
 
     final image = await images.load('examples/animation/chopper.png');
     final jsonData = await assets.readJson('images/examples/animation/chopper.json');
@@ -93,32 +95,59 @@ class ExampleGame extends BaseGame {
     animationComponent.anchor = Anchor.center;
     animationComponent.angle = 1.6;
 
-    log.info('Animation position >${animationComponent.position}');
-    log.info('Animation angle >${animationComponent.angle}');
-
     add(animationComponent);
   }
 
   @override
   void update(double dt) {
-    final log = Logger('update');
-
     super.update(dt);
 
-    if (animationComponent.position[0] < 100) {
+    // Hit the left side of the screen, need to turn around
+    if (!turning && animationComponent.position[0] < 100) {
       direction = Direction.right;
-      animationComponent.angle = 4.7;
+      turning = true;
     }
-    if (animationComponent.position[0] > (size[0] - 100)) {
+    // Hit the right side of the screen, need to turn around
+    else if (!turning && animationComponent.position[0] > (size[0] - 100)) {
       direction = Direction.left;
-      animationComponent.angle = 1.6;
+      turning = true;
     }
 
+    // Moving right
     if (direction == Direction.right) {
-      animationComponent.position.add(Vector2(6, 0));
+      // Turning right
+      if (turning) {
+        if (animationComponent.angle < 4.7) {
+          animationComponent.angle += 0.1;
+        } else {
+          animationComponent.position.add(Vector2(6, 0));
+          animationComponent.angle = 4.7;
+          turning = false;
+        }
+      }
+      // Only moving
+      else {
+        animationComponent.position.add(Vector2(6, 0));
+      }
     }
-    if (direction == Direction.left) {
-      animationComponent.position.add(Vector2(-6, 0));
+    // Moving right
+    else if (direction == Direction.left) {
+      // Turning left
+      if (turning) {
+        if (animationComponent.angle < 7.8) {
+          animationComponent.angle += 0.1;
+        } else {
+          animationComponent.position.add(Vector2(-6, 0));
+          animationComponent.angle = 1.6;
+          turning = false;
+        }
+      }
+      // Only moving
+      else {
+        animationComponent.position.add(Vector2(-6, 0));
+      }
     }
+
+    return;
   }
 }

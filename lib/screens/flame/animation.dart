@@ -12,7 +12,7 @@ import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
 
-///
+/// Screen Boilerplate
 class FlameAnimationScreen extends StatelessWidget {
   static String name = 'Animation';
   static String description = '';

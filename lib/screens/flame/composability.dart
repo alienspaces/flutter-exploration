@@ -9,7 +9,7 @@ import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
 
-///
+/// Screen Boilerplate
 class FlameComposabilityScreen extends StatelessWidget {
   static String name = 'Composability Screen';
   static String description = '';
