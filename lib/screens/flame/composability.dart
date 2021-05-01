@@ -3,15 +3,15 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 // Application packages
-import 'package:flutterexploration/screens/flame/home_source.dart';
+import 'package:flutterexploration/screens/flame/composability_source.dart';
 import 'package:flutterexploration/widgets/open_source_drawer.dart';
 import 'package:flutterexploration/widgets/screen_body.dart';
 import 'package:flutterexploration/widgets/screen_list_drawer.dart';
 import 'package:flutterexploration/widgets/source_drawer.dart';
 
 ///
-class FlameHomeScreen extends StatelessWidget {
-  static String name = 'Flame Home Screen';
+class FlameComposabilityScreen extends StatelessWidget {
+  static String name = 'Composability Screen';
   static String description = '';
   static bool hide = false;
 
@@ -24,7 +24,7 @@ class FlameHomeScreen extends StatelessWidget {
       key: _scaffoldKey,
       // Common application bar
       appBar: AppBar(
-        title: Text(FlameHomeScreen.name),
+        title: Text(FlameComposabilityScreen.name),
         actions: <Widget>[
           // Open source code
           OpenSourceDrawerWidget(scaffoldKey: _scaffoldKey),
@@ -70,26 +70,51 @@ class FlameHomeScreen extends StatelessWidget {
   }
 }
 
+class Square extends PositionComponent {
+  Square(Vector2 position, Vector2 size, {double angle = 0}) {
+    this.position.setFrom(position);
+    this.size.setFrom(size);
+    this.angle = angle;
+  }
+}
+
+class ParentSquare extends Square {
+  ParentSquare(Vector2 position, Vector2 size) : super(position, size);
+
+  @override
+  void onMount() {
+    super.onMount();
+    createChildren();
+  }
+
+  void createChildren() {
+    // All positions here are in relation to the parent's position
+    final children = [
+      Square(Vector2(100, 100), Vector2(50, 50), angle: 2),
+      Square(Vector2(160, 100), Vector2(50, 50), angle: 3),
+      Square(Vector2(170, 150), Vector2(50, 50), angle: 4),
+      Square(Vector2(70, 200), Vector2(50, 50), angle: 5),
+    ];
+
+    children.forEach(addChild);
+  }
+}
+
 class ExampleGame extends BaseGame {
-  SpriteAnimationComponent animationComponent;
+  ParentSquare _parent;
+
+  @override
+  bool debugMode = true;
 
   @override
   Future<void> onLoad() async {
-    final image = await images.load('examples/animation/chopper.png');
-    final jsonData = await assets.readJson('images/examples/animation/chopper.json');
-    final animation = SpriteAnimation.fromAsepriteData(image, jsonData);
-    final spriteSize = Vector2.all(200);
-    animationComponent = SpriteAnimationComponent(
-      animation: animation,
-      position: (size - spriteSize) / 2,
-      size: spriteSize,
-    );
-    add(animationComponent);
+    _parent = ParentSquare(Vector2.all(300), Vector2.all(300))..anchor = Anchor.center;
+    add(_parent);
   }
 
   @override
   void update(double dt) {
     super.update(dt);
-    animationComponent.angle += dt;
+    _parent.angle += dt;
   }
 }

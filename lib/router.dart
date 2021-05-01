@@ -40,6 +40,7 @@ import 'package:flutterexploration/screens/flutter/widget_fade.dart';
 import 'package:flutterexploration/screens/flame/home.dart';
 import 'package:flutterexploration/screens/flame/animation.dart';
 import 'package:flutterexploration/screens/flame/collision_detection.dart';
+import 'package:flutterexploration/screens/flame/composability.dart';
 
 /// Defines a category of route
 class RouteCategory {
@@ -287,6 +288,13 @@ List<RouteCategory> routeCategories = [
         description: FlameCollisionDetectionScreen.description,
         hide: FlameCollisionDetectionScreen.hide,
         screen: FlameCollisionDetectionScreen(),
+        isDefault: true,
+      ),
+      RouteConfig(
+        name: FlameComposabilityScreen.name,
+        description: FlameComposabilityScreen.description,
+        hide: FlameComposabilityScreen.hide,
+        screen: FlameComposabilityScreen(),
         isDefault: true,
       ),
     ],
