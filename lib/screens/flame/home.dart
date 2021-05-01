@@ -1,5 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
+import 'package:logging/logging.dart';
 import 'package:flutter/material.dart';
 
 // Application packages
@@ -70,11 +71,16 @@ class FlameHomeScreen extends StatelessWidget {
   }
 }
 
+enum Direction { left, right }
+
 class ExampleGame extends BaseGame {
   SpriteAnimationComponent animationComponent;
+  Direction direction = Direction.left;
 
   @override
   Future<void> onLoad() async {
+    final log = Logger('onLoad');
+
     final image = await images.load('examples/animation/chopper.png');
     final jsonData = await assets.readJson('images/examples/animation/chopper.json');
     final animation = SpriteAnimation.fromAsepriteData(image, jsonData);
@@ -84,12 +90,35 @@ class ExampleGame extends BaseGame {
       position: (size - spriteSize) / 2,
       size: spriteSize,
     );
+    animationComponent.anchor = Anchor.center;
+    animationComponent.angle = 1.6;
+
+    log.info('Animation position >${animationComponent.position}');
+    log.info('Animation angle >${animationComponent.angle}');
+
     add(animationComponent);
   }
 
   @override
   void update(double dt) {
+    final log = Logger('update');
+
     super.update(dt);
-    animationComponent.angle += dt;
+
+    if (animationComponent.position[0] < 100) {
+      direction = Direction.right;
+      animationComponent.angle = 4.7;
+    }
+    if (animationComponent.position[0] > (size[0] - 100)) {
+      direction = Direction.left;
+      animationComponent.angle = 1.6;
+    }
+
+    if (direction == Direction.right) {
+      animationComponent.position.add(Vector2(6, 0));
+    }
+    if (direction == Direction.left) {
+      animationComponent.position.add(Vector2(-6, 0));
+    }
   }
 }
