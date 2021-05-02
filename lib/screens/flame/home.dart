@@ -83,10 +83,19 @@ class ExampleGame extends BaseGame {
     final log = Logger('onLoad');
     log.info('Loading');
 
+    // Scale sprite based on screen size
+    Vector2 spriteSize = Vector2.all(200);
+    if (size[0] < 500) {
+      spriteSize = Vector2.all(100);
+    } else if (size[0] < 800) {
+      spriteSize = Vector2.all(150);
+    }
+
+    log.info('Sprite size >$size< spriteSize >$spriteSize<');
+
     final image = await images.load('examples/animation/chopper.png');
     final jsonData = await assets.readJson('images/examples/animation/chopper.json');
     final animation = SpriteAnimation.fromAsepriteData(image, jsonData);
-    final spriteSize = Vector2.all(200);
     animationComponent = SpriteAnimationComponent(
       animation: animation,
       position: (size - spriteSize) / 2,
@@ -106,12 +115,13 @@ class ExampleGame extends BaseGame {
     super.update(dt);
 
     // Hit the left side of the screen, need to turn around
-    if (!turning && animationComponent.position[0] < 100) {
+    if (!turning && animationComponent.position[0] < (animationComponent.size[0] / 2)) {
       direction = Direction.right;
       turning = true;
     }
     // Hit the right side of the screen, need to turn around
-    else if (!turning && animationComponent.position[0] > (size[0] - 100)) {
+    else if (!turning &&
+        animationComponent.position[0] > (size[0] - (animationComponent.size[0] / 2))) {
       direction = Direction.left;
       turning = true;
     }

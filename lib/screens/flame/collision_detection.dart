@@ -96,8 +96,9 @@ class CollidableComponent extends PositionComponent
           size: Vector2.all(100),
           anchor: Anchor.center,
         ) {
-    // fly animation
-    final spriteSize = Vector2.all(100.0);
+    // Scale sprite based on screen size
+    Vector2 spriteSize = Vector2.all(100);
+
     var flySpriteAnimation = SpriteAnimation.fromFrameData(
       flyImage,
       SpriteAnimationData.sequenced(
@@ -137,6 +138,18 @@ class CollidableComponent extends PositionComponent
     log.info('Position is >$position<');
     log.info('Center minus Position is >${center - position}<');
 
+    // Scale sprite based on screen size
+    Vector2 spriteSize = Vector2.all(100);
+    if (gameRef.size[0] < 500) {
+      spriteSize = Vector2.all(50);
+    } else if (gameRef.size[0] < 800) {
+      spriteSize = Vector2.all(75);
+    }
+    flyAnimationComponent.size = spriteSize;
+    smashAnimationComponent.size = spriteSize;
+
+    log.info('Game size >${gameRef.size}< spriteSize >$spriteSize<');
+
     velocity = (center - position)..scaleTo(150);
     debugColor = Colors.black;
 
@@ -155,6 +168,19 @@ class CollidableComponent extends PositionComponent
       remove();
       return;
     }
+
+    // Scale sprite based on screen size
+    Vector2 spriteSize = Vector2.all(100);
+    if (gameRef.size[0] < 500) {
+      spriteSize = Vector2.all(50);
+    } else if (gameRef.size[0] < 800) {
+      spriteSize = Vector2.all(75);
+    }
+    flyAnimationComponent.size = spriteSize;
+    smashAnimationComponent.size = spriteSize;
+
+    log.fine('Game size >${gameRef.size}< spriteSize >$spriteSize<');
+
     if (_isCollision) {
       removeChild(currentAnimation);
       currentAnimation = smashAnimationComponent;
