@@ -1,3 +1,4 @@
+import 'package:logging/logging.dart';
 import 'package:flutter/material.dart';
 
 // Application packages
@@ -6,6 +7,25 @@ import 'package:flutterexploration/router.dart';
 class ScreenListDrawerWidget extends StatelessWidget {
   @override
   build(BuildContext context) {
+    final log = Logger('ScreenListDrawerWidget - build');
+
+    var screenSize = MediaQuery.of(context).size;
+    var width = screenSize.width;
+    var categoryWidth = (width / routeCategories.length) - 30;
+    if (categoryWidth > 300) {
+      categoryWidth = 300;
+    }
+    double scale = 1;
+
+    // Scale titles down based on width
+    if (width < 500) {
+      scale = 0.8;
+    } else if (width < 800) {
+      scale = 0.9;
+    }
+
+    log.info('Building width >$width< scale >$scale<');
+
     // Route
     var route = ModalRoute.of(context);
     String currentRouteName = '';
@@ -23,36 +43,36 @@ class ScreenListDrawerWidget extends StatelessWidget {
         // Add route category
         routeList.add(
           DrawerHeader(
-            // decoration: BoxDecoration(
-            //   color: Theme.of(context).colorScheme.secondary,
-            // ),
             padding: EdgeInsets.zero,
             margin: EdgeInsets.zero,
             child: Container(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.topLeft,
               color: Theme.of(context).colorScheme.primary,
               padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
+                  // Title
                   Container(
-                    alignment: Alignment.centerLeft,
+                    alignment: Alignment.topLeft,
+                    margin: EdgeInsets.only(top: 20),
                     child: Text(
                       '${routeCategory.name}',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5
-                          .copyWith(color: Theme.of(context).colorScheme.onPrimary),
+                      style: Theme.of(context).textTheme.headline5.copyWith(
+                            color: Theme.of(context).colorScheme.onPrimary,
+                            fontSize: Theme.of(context).textTheme.headline5.fontSize * scale,
+                          ),
                     ),
                   ),
+                  // Description
                   Container(
-                    alignment: Alignment.centerLeft,
+                    margin: EdgeInsets.only(top: 20),
+                    alignment: Alignment.topLeft,
                     child: Text(
                       '${routeCategory.description ?? ""}',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1
-                          .copyWith(color: Theme.of(context).colorScheme.onSecondary),
+                      style: Theme.of(context).textTheme.bodyText1.copyWith(
+                            color: Theme.of(context).colorScheme.onSecondary,
+                          ),
                     ),
                   ),
                 ],
@@ -77,25 +97,27 @@ class ScreenListDrawerWidget extends StatelessWidget {
                 Navigator.of(context).pushReplacementNamed(routeName),
               },
               title: Container(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.topLeft,
                 child: Text(
                   '${route.name}',
                   style: Theme.of(context).textTheme.headline6.copyWith(
                         color: currentRoute
                             ? Theme.of(context).colorScheme.onSecondary
                             : Theme.of(context).colorScheme.onSurface,
+                        fontSize: Theme.of(context).textTheme.headline6.fontSize * scale,
                       ),
                 ),
               ),
               subtitle: Container(
                 margin: EdgeInsets.fromLTRB(0, 3, 0, 3),
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.topLeft,
                 child: Text(
                   '${route.description ?? ""}',
                   style: Theme.of(context).textTheme.bodyText2.copyWith(
                         color: currentRoute
                             ? Theme.of(context).colorScheme.onSecondary
                             : Theme.of(context).colorScheme.onSurface,
+                        fontSize: Theme.of(context).textTheme.bodyText2.fontSize * scale,
                       ),
                 ),
               ),
@@ -115,7 +137,7 @@ class ScreenListDrawerWidget extends StatelessWidget {
         // Add list of routes to category column list
         categoryColumnList.add(
           Container(
-            width: 300,
+            width: categoryWidth,
             color: Theme.of(context).colorScheme.secondary,
             padding: EdgeInsets.only(left: 10),
             child: Column(
@@ -137,7 +159,7 @@ class ScreenListDrawerWidget extends StatelessWidget {
     }
 
     return Container(
-      width: routeCategories.length * 300.00,
+      width: categoryWidth * routeCategories.length,
       child: Drawer(
         child: Scrollbar(
           child: SingleChildScrollView(

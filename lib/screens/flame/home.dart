@@ -100,6 +100,9 @@ class ExampleGame extends BaseGame {
 
   @override
   void update(double dt) {
+    final log = Logger('ExampleGame - update');
+    log.fine('Updating');
+
     super.update(dt);
 
     // Hit the left side of the screen, need to turn around
