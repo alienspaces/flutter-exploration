@@ -8,6 +8,7 @@ class SourceWidget extends StatelessWidget {
   
 import \'package:flame/components.dart\';
 import \'package:flame/game.dart\';
+import \'package:logging/logging.dart\';
 import \'package:flutter/material.dart\';
 
 // Application packages
@@ -91,11 +92,15 @@ class ParentSquare extends Square {
 
   @override
   void onMount() {
+    final log = Logger(\'ParentSquare - onMount\');
+    log.info(\'Mounting\');
     super.onMount();
     createChildren();
   }
 
   void createChildren() {
+    final log = Logger(\'ParentSquare - createChildren\');
+    log.info(\'Creating children\');
     // All positions here are in relation to the parent\'s position
     final children = [
       Square(Vector2(100, 100), Vector2(50, 50), angle: 2),
@@ -116,13 +121,20 @@ class ExampleGame extends BaseGame {
 
   @override
   Future<void> onLoad() async {
+    final log = Logger(\'ExampleGame - onLoad\');
+    log.info(\'Loading\');
+
     _parent = ParentSquare(Vector2.all(300), Vector2.all(300))..anchor = Anchor.center;
     add(_parent);
   }
 
   @override
   void update(double dt) {
+    final log = Logger(\'ExampleGame - update\');
+    log.fine(\'Updating\');
+
     super.update(dt);
+
     _parent.angle += dt;
   }
 }
